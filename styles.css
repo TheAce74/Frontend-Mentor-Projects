@@ -1,0 +1,70 @@
+@font-face {
+  font-family: Gentium;
+  src: url("assets/GentiumBasic-Regular.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+select,
+a {
+  font: inherit;
+  color: inherit;
+}
+
+body {
+  font-family: Gentium;
+  display: grid;
+  place-content: center;
+  background: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)),
+    url("assets/530476.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  color: white;
+  font-size: 18px;
+}
+
+h1,
+h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+div {
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: space-around;
+}
+
+a {
+  padding: 0.8em;
+  background-color: hsl(0, 89%, 36%);
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+a:hover {
+  color: hsl(0, 89%, 36%);
+  background-color: hsla(0, 0%, 0%, 0.719);
+}
+
+select {
+  background-color: hsl(0, 89%, 36%);
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 44rem) {
+  body {
+    font-size: 14px;
+  }
+}

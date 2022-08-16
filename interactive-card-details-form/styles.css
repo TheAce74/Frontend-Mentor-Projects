@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --red: rgb(255, 82, 82);
+  --white: rgb(255, 255, 255);
+  --light-grayish-violet: rgb(222, 221, 223);
+  --dark-grayish-violet: rgb(142, 133, 147);
+  --dark-violet: rgb(33, 9, 47);
+}
+
+html,
+body {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+}
+
+button,
+input,
+a {
+  font: inherit;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+#image {
+  background: url("./images/bg-main-desktop.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+
+#page {
+  display: grid;
+}
+
+form,
+.pop {
+  width: 55%;
+  margin: auto;
+  transform: translateX(15%);
+  margin-bottom: -2.5em;
+}
+
+label,
+input {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+label {
+  font-weight: bold;
+  margin-top: 1.5em;
+  font-size: 0.8rem;
+  word-spacing: 0.3em;
+}
+
+input::placeholder {
+  color: var(--light-grayish-violet);
+}
+
+input {
+  border: 2px solid var(--light-grayish-violet);
+  border-radius: 7px;
+  outline: none;
+}
+
+input[type="text"] {
+  padding: 0.3em;
+  padding-left: 0.6em;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+input[type="text"]:focus {
+  border-image: linear-gradient(
+    to right,
+    rgb(100, 72, 254) 0%,
+    rgb(96, 5, 148) 100%
+  );
+  border-image-slice: 1;
+}
+
+.flex {
+  display: flex;
+  gap: 1em;
+  margin-top: -0.5em;
+}
+
+.flex > div:nth-of-type(1) {
+  flex-basis: calc(60% - 0.5em);
+}
+
+.flex > div:nth-of-type(2) {
+  flex-basis: calc(40% - 0.5em);
+}
+
+.flexInner {
+  display: flex;
+  gap: 0.5em;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 0.5em;
+  text-align: center;
+  margin-top: 1em;
+  background-color: var(--dark-violet);
+  color: var(--white);
+  cursor: pointer;
+  border: none;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(96, 5, 148);
+}
+
+.pop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: none;
+}
+
+.pop h1 {
+  text-transform: uppercase;
+  margin: 1.4em auto 1em;
+}
+
+.pop p {
+  margin-bottom: 1.5em;
+}
+
+/* cards */
+.front {
+  padding: 1em;
+  background-image: url("images/bg-card-front.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 7px;
+  width: 16em;
+  aspect-ratio: 3 / 1;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 20%;
+  transform: translateX(20%);
+  z-index: 3;
+}
+
+.front img {
+  width: 25%;
+  margin-bottom: 2em;
+}
+
+.front > div:nth-of-type(1) {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1em;
+}
+
+.front > div:nth-of-type(2) {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  justify-content: space-between;
+  font-size: 0.7rem;
+}
+
+.back {
+  background-image: url("images/bg-card-back.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 7px;
+  width: 16em;
+  aspect-ratio: 16 / 9;
+  color: var(--white);
+  position: absolute;
+  right: 0;
+  top: 55%;
+  transform: translateX(40%);
+  z-index: 2;
+}
+
+.back span {
+  position: relative;
+  left: 18.3em;
+  top: 5.2em;
+  font-size: 0.7rem;
+}
+
+@media only screen and (max-width: 44rem) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #image {
+    background: url("./images/bg-main-mobile.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height: 35vh;
+  }
+
+  form,
+  .pop {
+    width: 75%;
+    margin-top: 3em;
+    transform: translateX(0%);
+  }
+
+  .front {
+    right: calc(100% - 14em);
+    top: calc(100% - 7em);
+  }
+
+  .back {
+    top: 0;
+    transform: translate(-10%, 20%);
+  }
+}
