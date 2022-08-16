@@ -157,7 +157,7 @@ input[type="submit"]:hover {
   background-size: cover;
   border-radius: 7px;
   width: 16em;
-  aspect-ratio: 3 / 1;
+  aspect-ratio: 16 / 9;
   color: var(--white);
   display: flex;
   flex-direction: column;
