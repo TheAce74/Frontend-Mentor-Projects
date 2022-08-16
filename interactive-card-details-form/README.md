@@ -52,7 +52,7 @@ Users should be able to:
   border-image-slice: 1;
 }
 
-Still trying to wrap my head around the `slice` part though 😅
+Still trying to wrap my head around the "slice" part though 😅
 ```
 
 ## Author
