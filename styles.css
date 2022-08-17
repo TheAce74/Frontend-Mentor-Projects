@@ -41,7 +41,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 2s;
+  transition: opacity 2s;
 }
 
 .loader {
