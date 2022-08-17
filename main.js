@@ -1,3 +1,7 @@
+window.addEventListener("load", () => {
+  document.querySelector(".wrapper").classList.add("fade");
+});
+
 const link = document.querySelector("a");
 const select = document.querySelector("select");
 
