@@ -41,7 +41,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.5s;
+  transition: 2s;
 }
 
 .loader {
