@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --soft-red: hsl(10, 79%, 65%);
+  --faded-soft-red: hsla(10, 79%, 65%, 0.767);
+  --cyan: hsl(186, 34%, 60%);
+  --faded-cyan: hsla(186, 34%, 60%, 0.767);
+  --dark-brown: hsl(25, 47%, 15%);
+  --medium-brown: hsl(28, 10%, 53%);
+  --light-medium-brown: hsla(28, 10%, 53%, 0.233);
+  --cream: hsl(27, 66%, 92%);
+  --very-pale-orange: hsl(33, 100%, 98%);
+}
+
+html,
+body {
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  background-color: var(--cream);
+  color: var(--dark-brown);
+  display: grid;
+  height: 100%;
+}
+
+main {
+  width: 50vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+#balance {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--soft-red);
+  color: var(--very-pale-orange);
+  padding: 1em 1.3em;
+  border-radius: 1em;
+}
+
+#balance h1 {
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-bottom: 0.6em;
+}
+
+#balance p {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+#balance img {
+  width: 2.7em;
+}
+
+#expenses {
+  background-color: var(--very-pale-orange);
+  padding: 1.3em 2em;
+  border-radius: 1em;
+}
+
+#expenses > h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5em;
+}
+
+canvas {
+  padding-bottom: 0.5em;
+  margin-bottom: 1.2em;
+  border-bottom: 2px solid var(--light-medium-brown);
+}
+
+#total {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 0.3em;
+}
+
+#total h2 {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--medium-brown);
+}
+
+#total div:nth-child(1) h2 {
+  line-height: 2;
+}
+
+#total h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+#total p {
+  font-weight: 700;
+  margin-bottom: 0.15em;
+}
+
+@media only screen and (max-width: 44rem) {
+  html,
+  body {
+    font-size: 15px;
+  }
+
+  main {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 35rem) {
+  main {
+    height: 80vh;
+  }
+}
