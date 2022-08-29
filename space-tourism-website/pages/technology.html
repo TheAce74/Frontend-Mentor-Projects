@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+
+  <title>Space Tourism Website | Technology</title>
+
+  <!-- styles -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="styles/technology.css">
+
+  <!-- script -->
+  <script src="../main.js" defer></script>
+</head>
+
+<body>
+  <header class="flex">
+    <a href="../index.html"><img src="assets/shared/logo.svg" alt="Home"></a>
+
+    <div class="line"></div>
+
+    <button type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="menu">
+      <img class="open" src="assets/shared/icon-hamburger.svg" alt="">
+      <img class="close" src="assets/shared/icon-close.svg" alt="">
+    </button>
+
+    <nav class="header__nav" id="primary-navigation">
+      <ul role="list" aria-label="primary navigation" class="flex">
+        <li><a href="../index.html" class="nav-item"><span aria-hidden="true">00</span>Home</a></li>
+        <li><a href="destination.html" class="nav-item"><span aria-hidden="true">01</span>Destination</a></li>
+        <li><a href="crew.html" class="nav-item"><span aria-hidden="true">02</span>Crew</a></li>
+        <li><a href="technology.html" class="nav-item current"><span aria-hidden="true">03</span>Technology</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main--technology">
+    <h1><span aria-hidden="true">03</span>Space launch 101</h1>
+
+    <section class="grid">
+      <article class="grid">
+        <nav class="flex | main--technology__nav" aria-label="secondary navigation">
+          <button type="button" data-index="0" class="current">1</button>
+          <button type="button" data-index="1">2</button>
+          <button type="button" data-index="2">3</button>
+        </nav>
+
+        <div class="article__content" aria-live="polite">
+          <h2>The terminology...</h2>
+
+          <h2>Launch vehicle</h2>
+
+          <p>
+            A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a
+            payload from Earth's surface to space, usually to Earth orbit or beyond. Our
+            WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall,
+            it's quite an awe-inspiring sight on the launch pad!
+          </p>
+        </div>
+      </article>
+
+      <img srcset="assets/technology/image-launch-vehicle-landscape.jpg 768w,
+                  assets/technology/image-launch-vehicle-portrait.jpg 515w"
+                  sizes="(max-width: 50rem) 768px,
+                        515px"
+                   src="assets/technology/image-launch-vehicle-portrait.jpg" alt="">
+    </section>
+  </main>
+</body>
+
+</html>

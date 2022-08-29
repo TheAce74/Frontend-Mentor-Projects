@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+
+  <title>Space Tourism Website | Crew</title>
+
+  <!-- styles -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="styles/crew.css">
+
+  <!-- script -->
+  <script src="../main.js" defer></script>
+</head>
+
+<body>
+  <header class="flex">
+    <a href="../index.html"><img src="assets/shared/logo.svg" alt="Home"></a>
+
+    <div class="line"></div>
+
+    <button type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="menu">
+      <img class="open" src="assets/shared/icon-hamburger.svg" alt="">
+      <img class="close" src="assets/shared/icon-close.svg" alt="">
+    </button>
+
+    <nav class="header__nav" id="primary-navigation">
+      <ul role="list" aria-label="primary navigation" class="flex">
+        <li><a href="../index.html" class="nav-item"><span aria-hidden="true">00</span>Home</a></li>
+        <li><a href="destination.html" class="nav-item"><span aria-hidden="true">01</span>Destination</a></li>
+        <li><a href="crew.html" class="nav-item current"><span aria-hidden="true">02</span>Crew</a></li>
+        <li><a href="technology.html" class="nav-item"><span aria-hidden="true">03</span>Technology</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main--crew">
+    <h1><span aria-hidden="true">02</span>Meet your crew</h1>
+
+    <section class="grid">
+      <article>
+        <div class="article__content" aria-live="polite">
+          <h2>Commander</h2>
+
+          <h2>Douglas Hurley</h2>
+
+          <p>
+            Douglas Gerald Hurley is an American engineer, former Marine Corps pilot
+            and former NASA astronaut. He launched into space for the third time as
+            commander of Crew Dragon Demo-2.
+          </p>
+        </div>
+
+        <nav class="flex | main--crew__nav" aria-label="secondary navigation">
+          <button type="button" data-index="0" aria-label="commander" class="current"></button>
+          <button type="button" data-index="1" aria-label="mission specialist"></button>
+          <button type="button" data-index="2" aria-label="pilot"></button>
+          <button type="button" data-index="3" aria-label="flight engineer"></button>
+        </nav>
+      </article>
+
+      <picture>
+        <source srcset="assets/crew/image-douglas-hurley.webp">
+        <img src="assets/crew/image-douglas-hurley.png" alt="commander">
+      </picture>
+    </section>
+  </main>
+</body>
+
+</html>

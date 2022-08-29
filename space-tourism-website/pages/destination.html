@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+
+  <title>Space Tourism Website | Destination</title>
+
+  <!-- styles -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="styles/destination.css">
+
+  <!-- script -->
+  <script src="../main.js" defer></script>
+</head>
+
+<body>
+  <header class="flex">
+    <a href="../index.html"><img src="assets/shared/logo.svg" alt="Home"></a>
+
+    <div class="line"></div>
+
+    <button type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="menu">
+      <img class="open" src="assets/shared/icon-hamburger.svg" alt="">
+      <img class="close" src="assets/shared/icon-close.svg" alt="">
+    </button>
+
+    <nav class="header__nav" id="primary-navigation">
+      <ul role="list" aria-label="primary navigation" class="flex">
+        <li><a href="../index.html" class="nav-item"><span aria-hidden="true">00</span>Home</a></li>
+        <li><a href="destination.html" class="nav-item current"><span aria-hidden="true">01</span>Destination</a></li>
+        <li><a href="crew.html" class="nav-item"><span aria-hidden="true">02</span>Crew</a></li>
+        <li><a href="technology.html" class="nav-item"><span aria-hidden="true">03</span>Technology</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main--destination">
+    <h1><span aria-hidden="true">01</span>Pick your destination</h1>
+
+    <section class="grid">
+      <picture>
+        <source srcset="assets/destination/image-moon.webp">
+        <img src="assets/destination/image-moon.png" alt="the moon">
+      </picture>
+
+      <article>
+        <nav class="main--destination__nav">
+          <ul aria-label="secondary navigation" role="list" class="flex">
+            <li class="nav-item current" data-index="0" tabindex="0">Moon</li>
+            <li class="nav-item" data-index="1" tabindex="0">Mars</li>
+            <li class="nav-item" data-index="2" tabindex="0">Europa</li>
+            <li class="nav-item" data-index="3" tabindex="0">Titan</li>
+          </ul>
+        </nav>
+
+        <div class="article--main-content" aria-live="polite">
+          <h2>Moon</h2>
+
+          <p>
+            See our planet as you&apos;ve never seen it before. A perfect relaxing trip away to help
+            regain perspective and come back refreshed. While you&apos;re there, take in some history
+            by visiting the Luna 2 and Apollo 11 landing sites.
+          </p>
+        </div>
+
+        <div class="flex | article--extra-content" aria-live="polite">
+          <div>
+            <h3>Avg. distance</h3>
+            <p id="first">384,400 km</p>
+          </div>
+
+          <div>
+            <h3>Est. travel time</h3>
+            <p id="second">3 days</p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+
+</html>

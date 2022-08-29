@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./pages/assets/favicon-32x32.png">
+
+  <title>Frontend Mentor | Space Tourism Website</title>
+
+  <!-- styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- script -->
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <header class="flex">
+    <a href="index.html"><img src="pages/assets/shared/logo.svg" alt="Home"></a>
+
+    <div class="line"></div>
+
+    <button type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="menu">
+      <img class="open" src="pages/assets/shared/icon-hamburger.svg" alt="">
+      <img class="close" src="pages/assets/shared/icon-close.svg" alt="">
+    </button>
+
+    <nav class="header__nav" id="primary-navigation">
+      <ul role="list" aria-label="primary navigation" class="flex">
+        <li><a href="index.html" class="nav-item current"><span aria-hidden="true">00</span>Home</a></li>
+        <li><a href="pages/destination.html" class="nav-item"><span aria-hidden="true">01</span>Destination</a></li>
+        <li><a href="pages/crew.html" class="nav-item"><span aria-hidden="true">02</span>Crew</a></li>
+        <li><a href="pages/technology.html" class="nav-item"><span aria-hidden="true">03</span>Technology</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="grid | main--home">
+    <section class="main--home__section">
+      <h2>So, you want to travel to</h2>
+
+      <h1>Space</h1>
+
+      <p>
+        Let&apos;s face it; if you want to go to space, you might as well genuinely go to
+        outer space and not hover kind of on the edge of it. Well sit back, and relax
+        because we&apos;ll give you a truly out of this world experience!
+      </p>
+    </section>
+
+    <button type="button">Explore</button>
+  </main>
+</body>
+
+</html>
