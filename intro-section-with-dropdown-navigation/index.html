@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Intro Section With Dropdown Navigation</title>
+
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- custom styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- script -->
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <header class="flex">
+    <div class="flex">
+      <img src="images/logo.svg" alt="">
+
+      <nav id="primary-navigation">
+        <ul role="list" class="flex" aria-label="primary navigation">
+          <li class="flex | target" tabindex="0" data-value="0" id="features">
+            Features
+            <img src="images/icon-arrow-down.svg" alt="">
+
+            <ul aria-labelledby="features" role="list" class="extra | flex">
+              <li class="flex" tabindex="0">
+                <img src="images/icon-todo.svg" alt="">
+                &nbsp;&nbsp;Todo List
+              </li>
+              <li class="flex" tabindex="0">
+                <img src="images/icon-calendar.svg" alt="">
+                &nbsp;&nbsp;Calendar
+              </li>
+              <li class="flex" tabindex="0">
+                <img src="images/icon-reminders.svg" alt="">
+                &nbsp;&nbsp;Reminders
+              </li>
+              <li class="flex" tabindex="0">
+                <img src="images/icon-planning.svg" alt="">
+                &nbsp;&nbsp;Planning
+              </li>
+            </ul>
+          </li>
+          <li class="flex | target" tabindex="0" data-value="1" id="company">
+            Company
+            <img src="images/icon-arrow-down.svg" alt="">
+
+            <ul aria-labelledby="company" role="list" class="extra | flex">
+              <li tabindex="0">History</li>
+              <li tabindex="0">Our Team</li>
+              <li tabindex="0">Blog</li>
+            </ul>
+          </li>
+          <li tabindex="0">Careers</li>
+          <li tabindex="0">About</li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="flex">
+      <a href="">Login</a>
+      <a href="" role="button">Register</a>
+    </div>
+
+    <button type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="menu">
+      <img class="open" src="images/icon-menu.svg" alt="">
+      <img class="close" src="images/icon-close-menu.svg" alt="">
+    </button>
+  </header>
+
+  <main class="flex">
+    <div class="flex | content">
+      <h1>Make remote work</h1>
+
+      <p>
+        Get your team in sync, no matter your location. Streamline processes,
+        create team rituals, and watch productivity soar.
+      </p>
+
+      <button>Learn more</button>
+
+      <div class="flex | images">
+        <img src="images/client-databiz.svg" alt="">
+        <img src="images/client-audiophile.svg" alt="">
+        <img src="images/client-meet.svg" alt="">
+        <img src="images/client-maker.svg" alt="">
+      </div>
+    </div>
+
+    <img srcset="images/image-hero-mobile.png 750w,
+                      images/image-hero-desktop.png 960w" sizes="(max-width: 50rem) 750px,
+                            960px" src="images/image-hero-mobile.png" alt="">
+  </main>
+</body>
+
+</html>

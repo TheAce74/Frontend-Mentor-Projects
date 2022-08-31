@@ -1,0 +1,320 @@
+/* resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select,
+a {
+  font: inherit;
+  color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* utilities */
+:root {
+  --clr-neutral-900: hsl(0, 0%, 8%);
+  --clr-neutral-400: hsl(0, 0%, 41%);
+  --clr-neutral-100: hsl(0, 0%, 98%);
+
+  --fs-300: 0.875rem;
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: 2.75rem;
+  --fs-700: 3.5rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* general styles */
+body {
+  font-family: "Epilogue", sans-serif;
+  background-color: var(--clr-neutral-100);
+  font-size: var(--fs-500);
+  font-weight: 500;
+  color: var(--clr-neutral-400);
+}
+
+header {
+  width: 90%;
+  margin-inline: auto;
+  margin-block: 1.5em 2em;
+}
+
+header > .flex {
+  gap: 3em;
+}
+
+button[aria-label="menu"] {
+  display: none;
+}
+
+nav > ul {
+  gap: 2em;
+}
+
+nav > ul > li {
+  gap: 0.3em;
+  cursor: pointer;
+  position: relative;
+}
+
+nav > ul > li:hover,
+nav > ul > li:focus-visible {
+  color: var(--clr-neutral-900);
+  outline: none;
+}
+
+nav > ul > li > img {
+  width: 0.5em;
+  aspect-ratio: 1.4;
+}
+
+nav > ul > li [class*="extra"] {
+  display: none;
+  flex-direction: column;
+}
+
+nav > ul > li:hover [class*="extra"],
+nav > ul > li:active [class*="extra"],
+nav > ul > li:focus-visible [class*="extra"],
+nav > ul > li:focus-within [class*="extra"] {
+  display: block;
+  position: absolute;
+  inset: 2em 0;
+  width: max-content;
+  height: max-content;
+  padding: 1em;
+  background-color: var(--clr-neutral-100);
+  border-radius: 0.8em;
+  box-shadow: 0 0 5px 0 var(--clr-neutral-400);
+  color: var(--clr-neutral-400);
+  z-index: 1;
+}
+
+nav > ul > li [class*="extra"] li {
+  outline: none;
+}
+
+nav > ul > li [class*="extra"] li:hover,
+nav > ul > li [class*="extra"] li:focus-visible {
+  color: var(--clr-neutral-900);
+}
+
+header > .flex + * {
+  gap: 1.4em;
+}
+
+header > .flex + * a {
+  text-decoration: none;
+}
+
+header > .flex + * a:hover,
+header > .flex + * a:focus-visible {
+  color: var(--clr-neutral-900);
+}
+
+header > .flex + * a:nth-child(2) {
+  border: 2px solid var(--clr-neutral-400);
+  border-radius: 0.8em;
+  padding: 0.3em 0.6em;
+}
+
+header > .flex + * a:nth-child(2):hover,
+header > .flex + * a:nth-child(2):focus-visible {
+  color: var(--clr-neutral-900);
+}
+
+main {
+  width: calc(90% - 5em);
+  margin: auto;
+  gap: 3em;
+}
+
+.content {
+  flex-direction: column;
+  flex-basis: 56%;
+  gap: 2em;
+}
+
+.content h1 {
+  font-size: var(--fs-700);
+  line-height: 1;
+  color: var(--clr-neutral-900);
+  font-weight: 700;
+  align-self: flex-start;
+}
+
+.content p {
+  font-size: var(--fs-400);
+}
+
+.content button {
+  width: max-content;
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-neutral-900);
+  border-radius: 0.8em;
+  padding: 0.7em 1.4em;
+  font-size: var(--fs-300);
+  cursor: pointer;
+  border: 1px solid var(--clr-neutral-900);
+  align-self: flex-start;
+}
+
+.content button:hover,
+.content button:focus-visible {
+  background-color: transparent;
+  color: var(--clr-neutral-900);
+}
+
+main img {
+  width: min(44%, 19em);
+  align-self: stretch;
+}
+
+.images {
+  align-self: flex-start;
+}
+
+.images * {
+  width: 19%;
+  aspect-ratio: 4;
+}
+
+@media only screen and (max-width: 50rem) {
+  body {
+    font-size: var(--fs-400);
+  }
+
+  button[aria-label="menu"] {
+    display: block;
+    background: transparent;
+    width: 3em;
+    border: none;
+    aspect-ratio: 1;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .close {
+    display: none;
+  }
+
+  button.active .open {
+    display: none;
+  }
+
+  button.active .close {
+    display: block;
+  }
+
+  #primary-navigation,
+  header > .flex + * a {
+    display: none;
+  }
+
+  #primary-navigation.active {
+    display: block;
+    position: fixed;
+    inset: 0 0 0 40%;
+    background-color: var(--clr-neutral-100);
+  }
+
+  #primary-navigation > ul.flex {
+    flex-direction: column;
+    height: 10%;
+    transform: translate(20%, 170%);
+    align-items: flex-start;
+  }
+
+  #primary-navigation > ul.flex li {
+    height: 20%;
+  }
+
+  header > .flex + *:not(button) {
+    flex-direction: column;
+    z-index: 1;
+    position: fixed;
+    inset: 47% -12% 60% 25%;
+  }
+
+  header > .flex + * a.active {
+    display: block;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+  }
+
+  main {
+    width: 90%;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .content {
+    gap: 1em;
+  }
+
+  .content h1 {
+    font-size: var(--fs-600);
+    align-self: center;
+  }
+
+  .content button {
+    align-self: center;
+    margin-bottom: 0.7em;
+    font-size: var(--fs-400);
+  }
+
+  .images {
+    align-self: center;
+    margin-bottom: 4em;
+  }
+
+  main > img {
+    width: 90%;
+    height: 15em;
+    align-self: center;
+  }
+}
