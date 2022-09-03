@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Interactive Comments Section</title>
+
+  <!-- custom styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- script -->
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <main class="flex flex-col">
+    <div class="flex flex-col container">
+      <div aria-label="comment box" class="flex comment">
+        <div class="flex flex-col votes" aria-label="votes">
+          <img class="up-vote" src="images/icon-plus.svg" alt="upvote" aria-controls="votes" name="icon" tabindex="0">
+
+          <p id="votes" aria-live="polite">12 <span style="display: none;" aria-hidden="false">votes</span></p>
+
+          <img class="down-vote" src="images/icon-minus.svg" alt="downvote" aria-controls="votes" name="icon"
+            tabindex="0">
+        </div>
+
+        <div class="flex flex-col details">
+          <div class="flex">
+            <div class="flex">
+              <img src="images/avatars/image-amyrobson.png" alt="" class="pic">
+
+              <h1 class="name" aria-label="username">amyrobson</h1>
+
+              <p class="timestamp" aria-label="timestamp">1 month ago</p>
+            </div>
+
+            <div class="flex reply" name="icon" tabindex="0">
+              <img src="images/icon-reply.svg" alt="">
+
+              <p>Reply</p>
+            </div>
+          </div>
+
+          <p class="text" aria-label="comment">
+            Impressive! Though it seems the drag feature could be improved. But overall it looks incredible.
+            You've nailed the design and the responsiveness at various breakpoints works really well.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <div class="flex flex-col container">
+        <div aria-label="comment box" class="flex comment">
+          <div class="flex flex-col votes" aria-label="votes">
+            <img class="up-vote" src="images/icon-plus.svg" alt="upvote" aria-controls="votes" name="icon" tabindex="0">
+
+            <p id="votes" aria-live="polite">5 <span style="display: none;" aria-hidden="false">votes</span></p>
+
+            <img class="down-vote" src="images/icon-minus.svg" alt="downvote" aria-controls="votes" name="icon"
+              tabindex="0">
+          </div>
+
+          <div class="flex flex-col details">
+            <div class="flex">
+              <div class="flex">
+                <img src="images/avatars/image-maxblagun.png" alt="" class="pic">
+
+                <h1 class="name" aria-label="username">maxblagun</h1>
+
+                <p class="timestamp" aria-label="timestamp">2 weeks ago</p>
+              </div>
+
+              <div class="flex reply" name="icon" tabindex="0">
+                <img src="images/icon-reply.svg" alt="">
+
+                <p>Reply</p>
+              </div>
+            </div>
+
+            <p class="text" aria-label="comment">
+              Woah, your project looks awesome! How long have you been coding for?
+              I'm still new, but think I want to dive into React as well soon.
+              Perhaps you can give me an insight on where I can learn React? Thanks!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="line">
+        <div class="flex flex-col container">
+          <div aria-label="comment box" class="flex comment inner">
+            <div class="flex flex-col votes" aria-label="votes">
+              <img class="up-vote" src="images/icon-plus.svg" alt="upvote" aria-controls="votes" name="icon"
+                tabindex="0">
+
+              <p id="votes" aria-live="polite">4 <span style="display: none;" aria-hidden="false">votes</span></p>
+
+              <img class="down-vote" src="images/icon-minus.svg" alt="downvote" aria-controls="votes" name="icon"
+                tabindex="0">
+            </div>
+
+            <div class="flex flex-col details">
+              <div class="flex">
+                <div class="flex">
+                  <img src="images/avatars/image-ramsesmiron.png" alt="" class="pic">
+
+                  <h1 class="name" aria-label="username">ramsesmiron</h1>
+
+                  <p class="timestamp" aria-label="timestamp">1 week ago</p>
+                </div>
+
+                <div class="flex reply" name="icon" tabindex="0">
+                  <img src="images/icon-reply.svg" alt="">
+
+                  <p>Reply</p>
+                </div>
+              </div>
+
+              <p class="text" aria-label="comment">
+                <span>@maxblagun</span> If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS,
+                and
+                JS before considering React.
+                It's very tempting to jump ahead but lay a solid foundation first.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div aria-label="comment box" class="flex comment inner">
+          <div class="flex flex-col votes" aria-label="votes">
+            <img class="up-vote" src="images/icon-plus.svg" alt="upvote" aria-controls="votes" name="icon" tabindex="0">
+
+            <p id="votes" aria-live="polite">2 <span style="display: none;" aria-hidden="false">votes</span></p>
+
+            <img class="down-vote" src="images/icon-minus.svg" alt="downvote" aria-controls="votes" name="icon"
+              tabindex="0">
+          </div>
+
+          <div class="flex flex-col details">
+            <div class="flex">
+              <div class="flex">
+                <img src="images/avatars/image-juliusomo.png" alt="" class="pic">
+
+                <h1 class="name" aria-label="username">juliusomo</h1>
+
+                <span class="indicator">you</span>
+
+                <p class="timestamp" aria-label="timestamp">2 days ago</p>
+              </div>
+
+              <div class="flex | actions">
+                <div class="flex | delete" name="icon" tabindex="0">
+                  <img src="images/icon-delete.svg" alt="">
+
+                  <p>Delete</p>
+                </div>
+
+                <div class="flex | edit" name="icon" tabindex="0">
+                  <img src="images/icon-edit.svg" alt="">
+
+                  <p>Edit</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="text" aria-label="comment" aria-live="polite">
+              <span>@ramsesmiron</span> I couldn't agree more with this. Everything moves so fast
+              and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay
+              constant.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div aria-label="comment box" class="flex comment | create-comment" id="create-comment">
+      <img src="images/avatars/image-juliusomo.png" alt="">
+
+      <textarea placeholder="Add a comment..."></textarea>
+
+      <button id="send">Send</button>
+    </div>
+
+    <dialog aria-live="assertive">
+      <h1>Delete Comment</h1>
+
+      <p>
+        Are you sure you want to delete this comment?
+        This will remove the comment and can't be undone
+      </p>
+
+      <div class="flex">
+        <button id="cancel">No, cancel</button>
+        <button id="delete">Yes, delete</button>
+      </div>
+    </dialog>
+  </main>
+</body>
+
+</html>
