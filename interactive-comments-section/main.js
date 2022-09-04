@@ -685,6 +685,8 @@ setInterval(() => {
           ? `${minute} minutes ago`
           : hour == 1
           ? `${hour} hour ago`
+          : minute == 1
+          ? `${minute} minute ago`
           : `${hour} hours ago`;
     } else if (timestamp.textContent.match("hour")) {
       timestamp.textContent =
@@ -692,6 +694,8 @@ setInterval(() => {
           ? `${hour} hours ago`
           : day == 1
           ? `${day} day ago`
+          : hour == 1
+          ? `${hour} hour ago`
           : `${day} days ago`;
     } else if (timestamp.textContent.match("day")) {
       timestamp.textContent =
@@ -699,6 +703,8 @@ setInterval(() => {
           ? `${day} days ago`
           : week == 1
           ? `${week} week ago`
+          : day == 1
+          ? `${day} day ago`
           : `${week} weeks ago`;
     } else if (timestamp.textContent.match("week")) {
       timestamp.textContent =
@@ -706,6 +712,8 @@ setInterval(() => {
           ? `${week} weeks ago`
           : month == 1
           ? `${month} month ago`
+          : week == 1
+          ? `${week} week ago`
           : `${month} months ago`;
     } else if (timestamp.textContent.match("month")) {
       timestamp.textContent =
@@ -713,6 +721,8 @@ setInterval(() => {
           ? `${month} months ago`
           : year == 1
           ? `${year} year ago`
+          : month == 1
+          ? `${month} month ago`
           : `${year} years ago`;
     } else if (timestamp.textContent.match("year")) {
       timestamp.textContent =
