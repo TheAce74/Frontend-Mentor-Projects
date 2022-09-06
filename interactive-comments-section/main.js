@@ -52,11 +52,27 @@ setTimeout(() => {
     }
 
     icon.addEventListener("mouseover", (e) => {
+      e.target.classList.add("hovered");
       hover(icons);
     });
 
+    icon.addEventListener("focus", (e) => {
+      if (!e.target.classList.contains("hovered")) {
+        hover(icons);
+        e.target.classList.add("focused");
+      }
+    });
+
     icon.addEventListener("mouseout", (e) => {
+      e.target.classList.remove("hovered");
       out(icons);
+    });
+
+    icon.addEventListener("blur", (e) => {
+      if (e.target.classList.contains("focused")) {
+        out(icons);
+        e.target.classList.remove("focused");
+      }
     });
 
     icon.addEventListener("keypress", (e) => {
@@ -311,11 +327,27 @@ function replied(e) {
     }
 
     icon.addEventListener("mouseover", (e) => {
+      e.target.classList.add("hovered");
       hover(icons);
     });
 
+    icon.addEventListener("focus", (e) => {
+      if (!e.target.classList.contains("hovered")) {
+        hover(icons);
+        e.target.classList.add("focused");
+      }
+    });
+
     icon.addEventListener("mouseout", (e) => {
+      e.target.classList.remove("hovered");
       out(icons);
+    });
+
+    icon.addEventListener("blur", (e) => {
+      if (e.target.classList.contains("focused")) {
+        out(icons);
+        e.target.classList.remove("focused");
+      }
     });
 
     icon.addEventListener("keypress", (e) => {
@@ -522,11 +554,27 @@ setTimeout(() => {
       }
 
       icon.addEventListener("mouseover", (e) => {
+        e.target.classList.add("hovered");
         hover(icons);
       });
 
+      icon.addEventListener("focus", (e) => {
+        if (!e.target.classList.contains("hovered")) {
+          hover(icons);
+          e.target.classList.add("focused");
+        }
+      });
+
       icon.addEventListener("mouseout", (e) => {
+        e.target.classList.remove("hovered");
         out(icons);
+      });
+
+      icon.addEventListener("blur", (e) => {
+        if (e.target.classList.contains("focused")) {
+          out(icons);
+          e.target.classList.remove("focused");
+        }
       });
 
       icon.addEventListener("keypress", (e) => {
@@ -654,82 +702,87 @@ timeArr[1].setAttribute("data-time", `${current - 2 * 604800000}`);
 timeArr[2].setAttribute("data-time", `${current - 604800000}`);
 timeArr[3].setAttribute("data-time", `${current - 2 * 86400000}`);
 
-setInterval(() => {
-  const timestamps = document.querySelectorAll(".timestamp");
+setTimeout(() => {
+  function updateTime() {
+    const timestamps = document.querySelectorAll(".timestamp");
 
-  timestamps.forEach((timestamp) => {
-    if (!timestamp.getAttribute("data-time")) {
-      timestamp.setAttribute("data-time", Date.now());
-    }
+    timestamps.forEach((timestamp) => {
+      if (!timestamp.getAttribute("data-time")) {
+        timestamp.setAttribute("data-time", Date.now());
+      }
 
-    const datum = Number(timestamp.getAttribute("data-time"));
-    const difference = Date.now() - datum;
+      const datum = Number(timestamp.getAttribute("data-time"));
+      const difference = Date.now() - datum;
 
-    const year = Math.floor(difference / 31536000000);
-    const month = Math.floor(difference / 2628002880);
-    const week = Math.floor(difference / 604800000);
-    const day = Math.floor(difference / 86400000);
-    const hour = Math.floor(difference / 3600000);
-    const minute = Math.floor(difference / 60000);
+      const year = Math.floor(difference / 31536000000);
+      const month = Math.floor(difference / 2628002880);
+      const week = Math.floor(difference / 604800000);
+      const day = Math.floor(difference / 86400000);
+      const hour = Math.floor(difference / 3600000);
+      const minute = Math.floor(difference / 60000);
 
-    if (timestamp.textContent.match("now")) {
-      timestamp.textContent =
-        minute == 1
-          ? `${minute} minute ago`
-          : minute > 1
-          ? `${minute} minutes ago`
-          : `now`;
-    } else if (timestamp.textContent.match("minute")) {
-      timestamp.textContent =
-        minute >= 2 && minute < 60
-          ? `${minute} minutes ago`
-          : hour == 1
-          ? `${hour} hour ago`
-          : minute == 1
-          ? `${minute} minute ago`
-          : `${hour} hours ago`;
-    } else if (timestamp.textContent.match("hour")) {
-      timestamp.textContent =
-        hour >= 2 && hour < 24
-          ? `${hour} hours ago`
-          : day == 1
-          ? `${day} day ago`
-          : hour == 1
-          ? `${hour} hour ago`
-          : `${day} days ago`;
-    } else if (timestamp.textContent.match("day")) {
-      timestamp.textContent =
-        day >= 2 && day < 7
-          ? `${day} days ago`
-          : week == 1
-          ? `${week} week ago`
-          : day == 1
-          ? `${day} day ago`
-          : `${week} weeks ago`;
-    } else if (timestamp.textContent.match("week")) {
-      timestamp.textContent =
-        week >= 2 && week < 4
-          ? `${week} weeks ago`
-          : month == 1
-          ? `${month} month ago`
-          : week == 1
-          ? `${week} week ago`
-          : `${month} months ago`;
-    } else if (timestamp.textContent.match("month")) {
-      timestamp.textContent =
-        month >= 2 && month < 12
-          ? `${month} months ago`
-          : year == 1
-          ? `${year} year ago`
-          : month == 1
-          ? `${month} month ago`
-          : `${year} years ago`;
-    } else if (timestamp.textContent.match("year")) {
-      timestamp.textContent =
-        year > 1 ? `${year} years ago` : `${year} year ago`;
-    }
-  });
-}, 60000);
+      if (timestamp.textContent.match("now")) {
+        timestamp.textContent =
+          minute == 1
+            ? `${minute} minute ago`
+            : minute > 1
+            ? `${minute} minutes ago`
+            : `now`;
+      } else if (timestamp.textContent.match("minute")) {
+        timestamp.textContent =
+          minute >= 2 && minute < 60
+            ? `${minute} minutes ago`
+            : hour == 1
+            ? `${hour} hour ago`
+            : minute == 1
+            ? `${minute} minute ago`
+            : `${hour} hours ago`;
+      } else if (timestamp.textContent.match("hour")) {
+        timestamp.textContent =
+          hour >= 2 && hour < 24
+            ? `${hour} hours ago`
+            : day == 1
+            ? `${day} day ago`
+            : hour == 1
+            ? `${hour} hour ago`
+            : `${day} days ago`;
+      } else if (timestamp.textContent.match("day")) {
+        timestamp.textContent =
+          day >= 2 && day < 7
+            ? `${day} days ago`
+            : week == 1
+            ? `${week} week ago`
+            : day == 1
+            ? `${day} day ago`
+            : `${week} weeks ago`;
+      } else if (timestamp.textContent.match("week")) {
+        timestamp.textContent =
+          week >= 2 && week < 4
+            ? `${week} weeks ago`
+            : month == 1
+            ? `${month} month ago`
+            : week == 1
+            ? `${week} week ago`
+            : `${month} months ago`;
+      } else if (timestamp.textContent.match("month")) {
+        timestamp.textContent =
+          month >= 2 && month < 12
+            ? `${month} months ago`
+            : year == 1
+            ? `${year} year ago`
+            : month == 1
+            ? `${month} month ago`
+            : `${year} years ago`;
+      } else if (timestamp.textContent.match("year")) {
+        timestamp.textContent =
+          year > 1 ? `${year} years ago` : `${year} year ago`;
+      }
+    });
+  }
+
+  updateTime();
+  setInterval(updateTime, 60000);
+}, 0);
 
 //saving users' updates on unload
 window.addEventListener("unload", () => {
