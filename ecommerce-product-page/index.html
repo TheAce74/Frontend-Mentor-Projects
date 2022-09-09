@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | E-commerce Product Page</title>
+
+  <!-- custom styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="flex">
+    <div class="flex">
+      <button type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="menu">
+        <img class="open" src="images/icon-menu.svg" alt="">
+        <img class="close" src="images/icon-close.svg" alt="">
+      </button>
+
+      <a href="index.html"><img src="images/logo.svg" alt="Home"></a>
+
+      <nav class="header__nav" id="primary-navigation">
+        <ul role="list" aria-label="primary navigation" class="flex">
+          <li><a href="" class="nav-item">Collections</a></li>
+          <li><a href="" class="nav-item">Men</a></li>
+          <li><a href="" class="nav-item">Women</a></li>
+          <li><a href="" class="nav-item">About</a></li>
+          <li><a href="" class="nav-item">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="flex" aria-live="polite">
+      <div class="cart-icon" data-items="">
+        <img src="images/icon-cart.svg" alt="cart" tabindex="0" data-icon>
+      </div>
+
+      <div class="cart hidden">
+        <h3>Cart</h3>
+
+        <p class="empty">Your cart is empty.</p>
+      </div>
+
+      <img src="images/image-avatar.png" alt="">
+    </div>
+  </header>
+
+  <main class="flex">
+    <div class="flex flex-col | gallery" aria-hidden="true">
+      <img src="images/image-product-1.jpg" alt="" tabindex="0">
+
+      <div class="flex | desktop">
+        <img src="images/image-product-1-thumbnail.jpg" alt="" tabindex="0" class="current" data-index="0">
+        <img src="images/image-product-2-thumbnail.jpg" alt="" tabindex="0" data-index="1">
+        <img src="images/image-product-3-thumbnail.jpg" alt="" tabindex="0" data-index="2">
+        <img src="images/image-product-4-thumbnail.jpg" alt="" tabindex="0" data-index="3">
+      </div>
+
+      <div class="mobile">
+        <div class="flex">
+          <img src="images/icon-previous.svg" alt="" data-icon tabindex="0" class="prev">
+        </div>
+
+        <div class="flex">
+          <img src="images/icon-next.svg" alt="" data-icon tabindex="0" class="next">
+        </div>
+      </div>
+    </div>
+
+    <article>
+      <h2>Sneaker Company</h2>
+
+      <h1>Fall Limited Edition Sneakers</h1>
+
+      <p>
+        These low-profile sneakers are your perfect casual wear companion.
+        Featuring a durable rubber outer sole, they&apos;ll withstand everything
+        the weather can offer
+      </p>
+
+      <h2 aria-label="current price" class="flex">
+        $125.00
+        <span>50% <span style="display: none;" aria-hidden="false">off</span></span>
+      </h2>
+
+      <p aria-hidden="true">$250.00</p>
+
+      <div class="flex | place-order">
+        <div class="flex | order" aria-label="place order">
+          <img src="images/icon-minus.svg" alt="decrease order amount" aria-controls="order-amount" tabindex="0"
+            data-icon>
+          <p id="order-amount" aria-label="current amount" aria-live="polite">0</p>
+          <img src="images/icon-plus.svg" alt="increase order amount" aria-controls="order-amount" tabindex="0"
+            data-icon>
+        </div>
+
+        <button class="add">
+          <img src="images/icon-cart-button.svg" alt="">
+          <span>Add to cart</span>
+        </button>
+      </div>
+    </article>
+  </main>
+
+  <!-- light-box gallery -->
+  <div class="flex flex-col | gallery dialog" aria-hidden="true">
+    <img src="images/image-product-1.jpg" alt="">
+
+    <div class="flex | desktop">
+      <img src="images/image-product-1-thumbnail.jpg" alt="" tabindex="0" class="current" data-index="0">
+      <img src="images/image-product-2-thumbnail.jpg" alt="" tabindex="0" data-index="1">
+      <img src="images/image-product-3-thumbnail.jpg" alt="" tabindex="0" data-index="2">
+      <img src="images/image-product-4-thumbnail.jpg" alt="" tabindex="0" data-index="3">
+
+      <div class="flex">
+        <img src="images/icon-previous.svg" alt="" data-icon tabindex="0" class="prev">
+      </div>
+
+      <div class="flex">
+        <img src="images/icon-next.svg" alt="" data-icon tabindex="0" class="next">
+      </div>
+
+      <img src="images/icon-close.svg" alt="" data-icon tabindex="0" class="close-popup">
+    </div>
+  </div>
+
+  <!-- script -->
+  <script src="main.js"></script>
+</body>
+
+</html>
