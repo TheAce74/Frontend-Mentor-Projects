@@ -1,0 +1,579 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap");
+
+/* resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select,
+a {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  resize: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* utilities */
+:root {
+  --clr-primary-400: hsl(176, 50%, 47%);
+  --clr-primary-500: hsl(176, 72%, 28%);
+
+  --clr-neutral-900: hsl(0, 0%, 0%);
+  --clr-neutral-300: hsl(0, 0%, 48%);
+  --clr-neutral-200: hsla(0, 0%, 48%, 0.041);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+
+  --clr-overlay: rgba(4, 9, 30, 0.7);
+
+  --flow: 0.4em;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.card {
+  box-shadow: 0 0 2px var(--clr-neutral-300);
+  border-radius: 0.8em;
+  padding: 1.5em;
+  width: 100%;
+  background-color: var(--clr-neutral-100);
+  position: relative;
+}
+
+.inner-card {
+  width: 100%;
+  padding: 1em;
+  box-shadow: 0 0 2px var(--clr-neutral-300);
+  border-radius: 0.5em;
+}
+
+.disabled {
+  opacity: 0.6;
+}
+
+.background {
+  background-color: var(--clr-overlay);
+}
+
+:where(.flow > :not(:last-child)) {
+  margin-bottom: var(--flow);
+}
+
+/* general styles */
+body {
+  color: var(--clr-neutral-300);
+  font-family: "Commissioner", sans-serif;
+  background-color: var(--clr-neutral-200);
+}
+
+header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  color: var(--clr-neutral-100);
+  padding: 1em 5em;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+#primary-navigation ul {
+  gap: 2.5em;
+}
+
+#primary-navigation ul li a {
+  text-decoration: none;
+}
+
+#primary-navigation ul li a:hover,
+#primary-navigation ul li a:focus-visible {
+  color: var(--clr-neutral-300);
+}
+
+button[aria-label="menu"] {
+  display: none;
+}
+
+.hero {
+  width: 100%;
+  height: 45vh;
+  background: url("images/image-hero-desktop.jpg"),
+    linear-gradient(var(--clr-overlay), var(--clr-overlay));
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+main {
+  width: 55%;
+  margin: auto;
+  transform: translateY(-5%);
+  border-radius: 1em;
+}
+
+.card:first-child {
+  text-align: center;
+}
+
+.card:first-child > img {
+  position: absolute;
+  width: 3em;
+  top: 0;
+  left: calc(50% - 1.5em);
+  right: calc(50% - 1.5em);
+  transform: translateY(-50%);
+}
+
+.card:first-child h1 {
+  color: var(--clr-neutral-900);
+}
+
+.card:first-child p {
+  --flow: 1.2em;
+}
+
+.card button:not(.inner-card h3 + button),
+.done button {
+  border: none;
+  background: var(--clr-primary-400);
+  color: var(--clr-neutral-100);
+  border-radius: 100vmax;
+  padding: 0.5em 1.8em;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.card button:not(.inner-card h3 + button):hover,
+.done button:hover,
+.card button:not(.inner-card h3 + button):focus-visible,
+.done button:focus-visible {
+  background-color: var(--clr-primary-500);
+}
+
+.card:first-child button:last-of-type {
+  background: var(--clr-neutral-200);
+  color: var(--clr-neutral-300);
+}
+
+.card:first-child button:last-of-type:hover,
+.card:first-child button:last-of-type:focus-visible {
+  background-color: var(--clr-neutral-300);
+  color: var(--clr-neutral-100);
+}
+
+.card:first-child button:last-of-type img,
+.card:first-child button:last-of-type p {
+  pointer-events: none;
+}
+
+.reversed {
+  background: var(--clr-primary-400) !important;
+  color: var(--clr-neutral-100) !important;
+}
+
+.reversed:hover,
+.reversed:focus-visible {
+  background: var(--clr-primary-500) !important;
+}
+
+.card:first-child button img {
+  width: 2em;
+}
+
+.card:nth-child(2) .line {
+  width: 1px;
+  height: 3em;
+  background-color: var(--clr-neutral-300);
+}
+
+.card:nth-child(2) h2 {
+  color: var(--clr-neutral-900);
+}
+
+.card:nth-child(2) > div {
+  --flow: 0.4em;
+  justify-content: space-around;
+}
+
+.card:nth-child(2) progress {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 0.5em;
+}
+
+.card:nth-child(2) progress::-webkit-progress-bar {
+  border-radius: 100vmax;
+}
+
+.card:nth-child(2) progress::-webkit-progress-value {
+  background-color: var(--clr-primary-400);
+  border-radius: 100vmax;
+}
+
+.card:last-child {
+  --flow: 1.2em;
+}
+
+.card:last-child h2,
+.card:last-child h3 {
+  --flow: 0.6em;
+  color: var(--clr-neutral-900);
+}
+
+.inner-card {
+  --flow: 0.9em;
+}
+
+.inner-card h3 + button {
+  color: var(--clr-primary-400);
+  border: none;
+  background-color: transparent;
+  font-weight: 500;
+}
+
+.inner-card h3 + button:hover,
+.inner-card h3 + button:focus-visible {
+  color: var(--clr-primary-500);
+}
+
+.inner-card:last-child button {
+  pointer-events: none;
+}
+
+.inner-card:last-child button:not(.inner-card h3 + button) {
+  background-color: var(--clr-neutral-300);
+}
+
+.amount {
+  gap: 0.2em;
+  align-items: flex-start;
+}
+
+.amount h4 {
+  font-size: 1.2rem;
+  color: var(--clr-neutral-900);
+}
+
+.amount p {
+  font-size: 0.8rem;
+  margin-top: 0.35em;
+}
+
+/* popup styling */
+dialog {
+  --flow: 1.3em;
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  right: 10%;
+  border: none;
+  border-radius: 1em;
+  background-color: var(--clr-neutral-100);
+  padding: 2em;
+  z-index: 3;
+  box-shadow: 0 0 0 1000vmax var(--clr-overlay);
+}
+
+dialog p {
+  color: var(--clr-neutral-300);
+}
+
+input[type="radio"] {
+  accent-color: var(--clr-primary-400);
+  align-self: flex-start;
+  margin-top: 0.5em;
+}
+
+[alt="close"] {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+dialog > h2,
+[alt="close"] {
+  --flow: 0.4em;
+}
+
+dialog h3:nth-of-type(2),
+dialog .card:not(:last-of-type):hover h3:first-of-type,
+dialog .card:not(:last-of-type):focus-within h3:first-of-type {
+  color: var(--clr-primary-400) !important;
+}
+
+dialog .card {
+  cursor: pointer;
+}
+
+dialog .card:last-of-type {
+  pointer-events: none;
+}
+
+.pledge {
+  border-top: 1px solid var(--clr-primary-400);
+  padding-top: 1em;
+  margin-top: 1.5em;
+  display: none;
+}
+
+.pledge textarea {
+  width: 13em;
+  padding: 0.5em;
+  border: 1px solid var(--clr-primary-400);
+  border-radius: 0.5em;
+}
+
+.done {
+  text-align: center;
+}
+
+.done img {
+  width: 3.5em;
+  margin: auto;
+  margin-bottom: .3em;
+}
+
+@media screen and (max-width: 44rem) {
+  html {
+    font-size: 14px;
+  }
+
+  header {
+    padding: 1em 2.5em;
+  }
+
+  #primary-navigation {
+    display: none;
+    position: fixed;
+    top: 13%;
+    left: 8%;
+    right: 8%;
+    background-color: var(--clr-neutral-100);
+    color: var(--clr-neutral-900);
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 1em;
+    box-shadow: 0 0 0 100vmax var(--clr-overlay);
+  }
+
+  #primary-navigation ul {
+    gap: 0em;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #primary-navigation ul li {
+    padding-block: 1em;
+    padding-left: 2em;
+    width: 100%;
+  }
+
+  #primary-navigation ul li:nth-child(2) {
+    border-block: 1px solid var(--clr-primary-400);
+  }
+
+  button[aria-label="menu"] {
+    display: block;
+    background: transparent;
+    border: none;
+    padding: 0.6em;
+    aspect-ratio: 1;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .close {
+    display: none;
+  }
+
+  button.active .open {
+    display: none;
+  }
+
+  button.active .close {
+    display: block;
+  }
+
+  button.active + #primary-navigation {
+    display: block;
+  }
+
+  .hero {
+    height: 30vh;
+    background: url("images/image-hero-mobile.jpg"),
+      linear-gradient(var(--clr-overlay), var(--clr-overlay));
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  main {
+    width: 80%;
+  }
+
+  .card:first-child button:last-of-type {
+    padding: 0;
+    border: 2px solid transparent;
+  }
+
+  .card:first-child button:last-of-type:hover,
+  .card:first-child button:last-of-type:focus-visible {
+    border: 2px solid var(--clr-neutral-300);
+  }
+
+  .reversed {
+    background: transparent !important;
+  }
+
+  .reversed:hover,
+  .reversed:focus-visible {
+    border: 2px solid var(--clr-primary-500) !important;
+  }
+
+  .card:first-child button img {
+    width: 3em;
+  }
+
+  .card:first-child button p {
+    display: none;
+  }
+
+  .card:nth-child(2) div {
+    --flow: 1em;
+    flex-direction: column;
+  }
+
+  .card:nth-child(2) div div {
+    text-align: center;
+  }
+
+  .card:nth-child(2) .line {
+    width: 100%;
+    height: 1px;
+  }
+
+  .card:nth-child(2) progress {
+    height: 0.8em;
+  }
+
+  .inner-card > .flex {
+    flex-direction: column;
+    gap: 0.3em;
+    align-items: flex-start;
+  }
+
+  .amount h4 {
+    font-size: 2rem;
+  }
+
+  .amount p {
+    font-size: 0.9rem;
+    margin-top: 0.7em;
+    margin-bottom: 1em;
+  }
+
+  /* popup styling */
+  dialog {
+    top: 12%;
+  }
+
+  dialog p {
+    font-size: 0.875rem;
+  }
+
+  dialog h3 {
+    line-height: 1.3;
+    margin-bottom: 0.3em;
+    font-size: 1rem;
+  }
+
+  dialog .card div div div:first-child {
+    flex-direction: column;
+    gap: 0;
+    align-items: flex-start;
+    margin-bottom: 0.3em;
+  }
+
+  dialog .card div div:not(.pledge) div:nth-child(2) {
+    position: absolute;
+    bottom: 2%;
+  }
+
+  dialog .card div div div:nth-child(2) h4 {
+    font-size: 1.8rem;
+  }
+
+  dialog .card {
+    padding-bottom: 3em;
+    gap: 1em;
+  }
+
+  .pledge {
+    flex-wrap: wrap;
+    gap: 0.8em;
+  }
+
+  .pledge textarea {
+    width: 100%;
+    font-size: 0.875rem;
+  }
+
+  .pledge .flex {
+    gap: 0.8em;
+    margin-bottom: 0.7em;
+  }
+
+  .pledge .flex button {
+    width: 50%;
+    font-size: 0.72rem !important;
+  }
+
+  .pledge .flex button:last-child {
+    padding: 0.5em 0.8em;
+  }
+}
