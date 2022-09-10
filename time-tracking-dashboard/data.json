@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Work",
+    "timeframes": {
+      "daily": {
+        "current": 5,
+        "previous": 7,
+        "period": "Yesterday"
+      },
+      "weekly": {
+        "current": 32,
+        "previous": 36,
+        "period": "Last Week"
+      },
+      "monthly": {
+        "current": 103,
+        "previous": 128,
+        "period": "Last Week"
+      }
+    }
+  },
+  {
+    "title": "Play",
+    "timeframes": {
+      "daily": {
+        "current": 1,
+        "previous": 2,
+        "period": "Yesterday"
+      },
+      "weekly": {
+        "current": 10,
+        "previous": 8,
+        "period": "Last Week"
+      },
+      "monthly": {
+        "current": 23,
+        "previous": 29,
+        "period": "Last Month"
+      }
+    }
+  },
+  {
+    "title": "Study",
+    "timeframes": {
+      "daily": {
+        "current": 0,
+        "previous": 1,
+        "period": "Yesterday"
+      },
+      "weekly": {
+        "current": 4,
+        "previous": 7,
+        "period": "Last Week"
+      },
+      "monthly": {
+        "current": 13,
+        "previous": 19,
+        "period": "Last Month"
+      }
+    }
+  },
+  {
+    "title": "Exercise",
+    "timeframes": {
+      "daily": {
+        "current": 1,
+        "previous": 1,
+        "period": "Yesterday"
+      },
+      "weekly": {
+        "current": 4,
+        "previous": 5,
+        "period": "Last Week"
+      },
+      "monthly": {
+        "current": 11,
+        "previous": 18,
+        "period": "Last Month"
+      }
+    }
+  },
+  {
+    "title": "Social",
+    "timeframes": {
+      "daily": {
+        "current": 1,
+        "previous": 3,
+        "period": "Yesterday"
+      },
+      "weekly": {
+        "current": 5,
+        "previous": 10,
+        "period": "Last Week"
+      },
+      "monthly": {
+        "current": 21,
+        "previous": 23,
+        "period": "Last Month"
+      }
+    }
+  },
+  {
+    "title": "Self Care",
+    "timeframes": {
+      "daily": {
+        "current": 0,
+        "previous": 1,
+        "period": "Yesterday"
+      },
+      "weekly": {
+        "current": 2,
+        "previous": 2,
+        "period": "Last Week"
+      },
+      "monthly": {
+        "current": 7,
+        "previous": 11,
+        "period": "Last Month"
+      }
+    }
+  }
+]

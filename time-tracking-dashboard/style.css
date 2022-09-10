@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+/* resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select,
+a {
+  font: inherit;
+  color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* utilities */
+:root {
+  --clr-primary-400: hsl(246, 80%, 60%);
+
+  --clr-neutral-600: hsl(226, 43%, 10%);
+  --clr-neutral-500: hsl(235, 46%, 20%);
+  --clr-neutral-400: hsl(235, 45%, 61%);
+  --clr-neutral-300: hsl(236, 100%, 87%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+
+  --clr-work: hsl(15, 100%, 70%);
+  --clr-play: hsl(195, 74%, 62%);
+  --clr-study: hsl(348, 100%, 68%);
+  --clr-exercise: hsl(145, 58%, 55%);
+  --clr-social: hsl(264, 64%, 52%);
+  --clr-care: hsl(43, 84%, 65%);
+
+  --clr-background: var(--clr-work);
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+/* general styles */
+body {
+  background-color: var(--clr-neutral-600);
+  color: var(--clr-neutral-100);
+  font-family: "Rubik", sans-serif;
+}
+
+main {
+  display: grid;
+  grid-template-areas:
+    "controls work play study"
+    "controls exercise social care";
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  right: 15%;
+  transform: translateY(-50%);
+  gap: 1.5em;
+  grid-template-columns: 1fr repeat(3, 1.3fr);
+  grid-auto-rows: 12.5em;
+}
+
+.controls {
+  grid-area: controls;
+  display: grid;
+}
+
+.controls > div:first-child {
+  z-index: 1;
+  background-color: var(--clr-primary-400);
+  border-radius: 1em;
+  padding: 1.5em;
+}
+
+.controls img {
+  max-width: 4em;
+  border: 2px solid var(--clr-neutral-100);
+  border-radius: 50%;
+  margin-bottom: 1.5em;
+}
+
+.controls > div:first-child div {
+  gap: 0em;
+  align-items: flex-start;
+}
+
+.controls h3 {
+  font-weight: 300;
+  font-size: 0.875rem;
+}
+
+.controls h2 {
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 1.5em;
+}
+
+.controls > div:last-child {
+  background-color: var(--clr-neutral-500);
+  border-radius: 1em;
+  transform: translateY(-20%);
+  gap: 0;
+  align-items: flex-start;
+  padding: 1em;
+}
+
+.controls button {
+  color: var(--clr-neutral-300);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0.4em 0.9em;
+}
+
+.controls button:first-child {
+  margin-top: 2em;
+}
+
+.controls button:hover,
+.controls button:focus-visible {
+  color: var(--clr-neutral-100);
+  opacity: 0.9;
+}
+
+.controls button.active {
+  color: var(--clr-neutral-100);
+  opacity: 1;
+}
+
+.controls ~ div {
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  background-size: 3.2em;
+  border-radius: 1em 1em 1.5em 1.5em;
+  background-color: var(--clr-background);
+}
+
+.work {
+  grid-area: work;
+  background: url("images/icon-work.svg");
+}
+
+.play {
+  --clr-background: var(--clr-play);
+  grid-area: play;
+  background: url("images/icon-play.svg");
+}
+
+.study {
+  --clr-background: var(--clr-study);
+  grid-area: study;
+  background: url("images/icon-study.svg");
+}
+
+.exercise {
+  --clr-background: var(--clr-exercise);
+  grid-area: exercise;
+  background: url("images/icon-exercise.svg");
+}
+
+.social {
+  --clr-background: var(--clr-social);
+  grid-area: social;
+  background: url("images/icon-social.svg");
+}
+
+.care {
+  --clr-background: var(--clr-care);
+  grid-area: care;
+  background: url("images/icon-self-care.svg");
+}
+
+.tracker {
+  background-color: var(--clr-neutral-500);
+  border-radius: 1em;
+  width: 100%;
+  height: calc(0.88 * 12.5em);
+  margin-top: auto;
+  padding: 1em;
+}
+
+.tracker:hover {
+  background-color: var(--clr-neutral-400);
+  cursor: pointer;
+}
+
+.header {
+  margin-bottom: 2em;
+  gap: 0.5em;
+}
+
+.header h2 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+svg {
+  cursor: pointer;
+}
+
+svg:hover path,
+svg:focus-visible path {
+  fill: var(--clr-neutral-100);
+}
+
+.header + div {
+  gap: 0;
+  align-items: flex-start;
+}
+
+.header + div p:first-of-type {
+  font-size: 2.2rem;
+  font-weight: 300;
+}
+
+.header + div p:last-of-type {
+  color: var(--clr-neutral-300);
+  font-size: 0.75rem;
+}
+
+@media (max-width: 56rem) {
+  main {
+    left: 5%;
+    right: 5%;
+  }
+}
+
+@media (max-width: 44rem) {
+  html {
+    font-size: 14px;
+  }
+
+  main {
+    display: block;
+    position: absolute;
+    top: 10%;
+    transform: translateY(0%);
+  }
+
+  .controls > div:first-child {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.5em;
+    align-items: center;
+    padding-bottom: 0;
+  }
+
+  .controls > div:first-child div {
+    gap: 0em;
+    align-items: flex-start;
+  }
+
+  .controls h2 {
+    margin-bottom: 0.6em;
+  }
+
+  .controls > div:last-child {
+    flex-direction: row;
+    gap: 0;
+    align-items: center;
+  }
+
+  .controls button,
+  .controls button:first-child {
+    margin-top: 1em;
+  }
+
+  .controls ~ div {
+    margin-bottom: 1.5em;
+  }
+
+  .tracker {
+    height: 9em;
+    margin-top: 1.6em;
+  }
+
+  .header {
+    margin-bottom: 1em;
+  }
+
+  .header + div {
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .header + div p:last-of-type {
+    font-size: 1rem;
+  }
+}

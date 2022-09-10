@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Time Tracking Dashboard</title>
+
+  <!-- styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- script -->
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <div class="controls">
+      <div>
+        <img src="images/image-jeremy.png" alt="">
+
+        <div class="flex flex-col" aria-hidden="true">
+          <h3>Report for</h3>
+          <h2>Jeremy Robson</h2>
+        </div>
+
+        <h1 style="display: none;" aria-hidden="false">Report for Jeremy Robson</h1>
+      </div>
+
+      <div class="flex flex-col">
+        <button>Daily</button>
+        <button class="active">Weekly</button>
+        <button>Monthly</button>
+      </div>
+    </div>
+
+    <div class="flex flex-col | work">
+      <div class="tracker">
+        <div class="flex | header">
+          <h2>Work</h2>
+
+          <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+            <path
+              d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+              fill="#BBC0FF" fill-rule="evenodd" />
+          </svg>
+        </div>
+
+        <div class="flex flex-col">
+          <p><span class="current">32</span>hrs</p>
+
+          <p><span class="period">Last Week</span> - <span class="previous">36</span>hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col | play">
+      <div class="tracker">
+        <div class="flex | header">
+          <h2>Play</h2>
+
+          <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+            <path
+              d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+              fill="#BBC0FF" fill-rule="evenodd" />
+          </svg>
+        </div>
+
+        <div class="flex flex-col">
+          <p><span class="current">10</span>hrs</p>
+
+          <p><span class="period">Last Week</span> - <span class="previous">8</span>hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col | study">
+      <div class="tracker">
+        <div class="flex | header">
+          <h2>Study</h2>
+
+          <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+            <path
+              d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+              fill="#BBC0FF" fill-rule="evenodd" />
+          </svg>
+        </div>
+
+        <div class="flex flex-col">
+          <p><span class="current">4</span>hrs</p>
+
+          <p><span class="period">Last Week</span> - <span class="previous">7</span>hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col | exercise">
+      <div class="tracker">
+        <div class="flex | header">
+          <h2>Exercise</h2>
+
+          <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+            <path
+              d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+              fill="#BBC0FF" fill-rule="evenodd" />
+          </svg>
+        </div>
+
+        <div class="flex flex-col">
+          <p><span class="current">4</span>hrs</p>
+
+          <p><span class="period">Last Week</span> - <span class="previous">5</span>hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col | social">
+      <div class="tracker">
+        <div class="flex | header">
+          <h2>Social</h2>
+
+          <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+            <path
+              d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+              fill="#BBC0FF" fill-rule="evenodd" />
+          </svg>
+        </div>
+
+        <div class="flex flex-col">
+          <p><span class="current">5</span>hrs</p>
+
+          <p><span class="period">Last Week</span> - <span class="previous">10</span>hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col | care">
+      <div class="tracker">
+        <div class="flex | header">
+          <h2>Self Care</h2>
+
+          <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+            <path
+              d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+              fill="#BBC0FF" fill-rule="evenodd" />
+          </svg>
+        </div>
+
+        <div class="flex flex-col">
+          <p><span class="current">2</span>hrs</p>
+
+          <p><span class="period">Last Week</span> - <span class="previous">2</span>hrs</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
