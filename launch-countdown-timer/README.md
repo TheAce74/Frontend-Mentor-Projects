@@ -36,6 +36,6 @@ Users should be able to:
 
 ## Author
 
-LinkedIn - [Chisom Udonsi](https://www.linkedin.com/in/chisom-udonsi-45196b216)
+- LinkedIn - [Chisom Udonsi](https://www.linkedin.com/in/chisom-udonsi-45196b216)
 - Frontend Mentor - [@TheAce74](https://www.frontendmentor.io/profile/TheAce74)
 - Twitter - [@TheAce74](https://www.twitter.com/TheAce74)

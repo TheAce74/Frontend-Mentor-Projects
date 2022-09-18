@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Todo App</title>
+
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- DnD library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js" defer></script>
+
+  <!-- script -->
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <section class="hero"></section>
+
+  <main>
+    <div class="flex">
+      <h1>Todo</h1>
+
+      <button aria-label="switch theme" class="theme">
+        <img src="images/icon-moon.svg" alt="" class="light">
+        <img src="images/icon-sun.svg" alt="" class="dark">
+      </button>
+    </div>
+
+    <div id="place">
+      <form class="flex container">
+        <input type="text" placeholder="Create a new todo...">
+        <button aria-label="Add Todo" title="Add Todo"></button>
+      </form>
+
+      <div class="container" aria-label="Todo list"></div>
+    </div>
+
+    <p class="drag">Drag and drop to reorder list</p>
+  </main>
+</body>
+
+</html>
