@@ -469,7 +469,7 @@ function clearCompleted() {
 //drag n' drop
 const todo = document.querySelector("[aria-label='Todo list']");
 new Sortable(todo, {
-  handle: ".item",
+  handle: ".item p",
   animation: 200,
   onEnd: reorder,
 });
