@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Tip Calculator App</title>
+
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- script -->
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <img src="images/logo.svg" alt="">
+
+  <section class="flex">
+    <div>
+      <div class="flex pop" aria-live="assertive" role="alert">
+        <h3>Bill</h3>
+      </div>
+
+      <div class="flex count">
+        <img src="images/icon-dollar.svg" alt="">
+        <input class="bill" placeholder="0" pattern="^\d+(\.\d+)?$" title="Positive numbers only">
+      </div>
+
+      <h3>Select Tip %</h3>
+
+      <div class="flex | tip">
+        <button class="btn">5%</button>
+        <button class="btn">10%</button>
+        <button class="btn">15%</button>
+        <button class="btn">25%</button>
+        <button class="btn">50%</button>
+        <button class="btn">Custom</button>
+      </div>
+
+      <div class="flex pop" aria-live="assertive" role="alert">
+        <h3>Number of People</h3>
+      </div>
+
+      <div class="flex count">
+        <img src="images/icon-person.svg" alt="">
+        <input class="people" placeholder="0" pattern="^\d+$" title="Whole numbers only">
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <div class="flex flex-col | space">
+        <div class="flex | board">
+          <h3>
+            <span>Tip Amount</span>
+            <span aria-hidden="true">/ person</span>
+            <span style="display: none;" aria-hidden="false">per person</span>
+          </h3>
+
+          <p class="amount">$0.00</p>
+        </div>
+
+        <div class="flex | board">
+          <h3>
+            <span>Total</span>
+            <span aria-hidden="true">/ person</span>
+            <span style="display: none;" aria-hidden="false">per person</span>
+          </h3>
+
+          <p class="amount">$0.00</p>
+        </div>
+      </div>
+
+      <button class="btn | reset" disabled>Reset</button>
+    </div>
+  </section>
+</body>
+
+</html>
