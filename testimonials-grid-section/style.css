@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+/* resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select,
+a {
+  font: inherit;
+  color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* utilities */
+:root {
+  --clr-primary-400: hsl(263, 55%, 52%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(0, 0%, 81%);
+  --clr-neutral-300: hsl(210, 46%, 95%);
+  --clr-neutral-500: hsl(217, 19%, 35%);
+  --clr-neutral-600: hsl(219, 29%, 14%);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.2em;
+}
+
+.card {
+  padding: 1.3em;
+  box-shadow: 0px 4px 16px var(--clr-neutral-300),
+    0px 6px 20px var(--clr-neutral-300);
+  border-radius: 0.8em;
+  background-color: var(--clr-neutral-100);
+}
+
+.card-blanc {
+  color: var(--clr-neutral-100);
+}
+
+.alpha-50 {
+  opacity: 0.5;
+}
+
+.alpha-70 {
+  opacity: 0.7;
+}
+
+.primary {
+  background: url("images/bg-pattern-quotation.svg"), var(--clr-primary-400);
+  background-repeat: no-repeat;
+  background-position-x: 85%;
+  grid-column: 1 / span 2;
+}
+
+.deep {
+  background-color: var(--clr-neutral-500);
+}
+
+.deeper {
+  background-color: var(--clr-neutral-600);
+  grid-column: 2 / span 2;
+}
+
+.flow > * {
+  padding-bottom: 0.8em;
+}
+
+/* general styles */
+body {
+  color: var(--clr-neutral-600);
+  background-color: var(--clr-neutral-300);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+main {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5em;
+  max-height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card:nth-child(3) {
+  grid-column: 4 / 5;
+  grid-row: 1 / span 2;
+}
+
+.card img {
+  border-radius: 50%;
+  width: 2.8em;
+  border: 2px solid var(--clr-primary-400);
+  aspect-ratio: 1;
+}
+
+.card h2 {
+  font-size: 1rem;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.card h3 {
+  font-weight: 600;
+  line-height: 1.2;
+  font-size: 1.3rem;
+}
+
+@media (max-width: 55rem) {
+  main {
+    display: block;
+    position: static;
+    transform: translate(0%, 0%);
+    margin: 2em auto;
+  }
+
+  .card {
+    margin-bottom: 1.5em;
+  }
+}
