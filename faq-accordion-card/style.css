@@ -149,24 +149,24 @@ article h1 {
   outline: none;
 }
 
-.container:hover .flex-dev p {
+.container:hover .flex-dev label {
   color: var(--clr-primary-400);
 }
 
-.container:active .extra,
+[type="checkbox"]:checked + .extra,
 .container:focus-visible .extra {
   visibility: visible;
   opacity: 1;
   height: 3.5em;
 }
 
-.container:active .flex-dev p,
-.container:focus-visible .flex-dev p {
+.container:has([type="checkbox"]:checked) .flex-dev label,
+.container:focus-visible .flex-dev label {
   font-weight: 700;
   color: var(--clr-neutral-500);
 }
 
-.container:active .arrow,
+.container:has([type="checkbox"]:checked) .arrow,
 .container:focus-visible .arrow {
   transform: rotate(0.5turn);
 }
@@ -175,8 +175,16 @@ article h1 {
   transition: 0.3s;
 }
 
+[type="checkbox"] {
+  display: none;
+}
+
+label {
+  flex: 1;
+}
+
 @media only screen and (max-width: 62rem) {
-  .container:active .extra,
+  [type="checkbox"]:checked + .extra,
   .container:focus-visible .extra {
     height: 4.5em;
   }
