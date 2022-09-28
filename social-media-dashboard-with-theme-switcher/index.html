@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Social Media Dashboard With Theme Switcher</title>
+
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="top"></div>
+
+  <main>
+    <header class="flex">
+      <div>
+        <h1 class="clr-text-1">Social Media Dashboard</h1>
+        <p>Total Followers: 23,004</p>
+      </div>
+
+      <div class="flex" aria-live="polite">
+        <p class="dark">Dark Mode</p>
+        <p class="light">Light Mode</p>
+        <input type="checkbox" id="toggle">
+        <label for="toggle">theme</label>
+      </div>
+    </header>
+
+    <section class="grid | followers" aria-label="followers">
+      <div class="social">
+        <div class="card card-inner flex flex-col" aria-label="facebook">
+          <div class="flex">
+            <img src="images/icon-facebook.svg" alt="">
+            <p>@nathanf</p>
+          </div>
+
+          <h2 class="clr-text-1">1987</h2>
+
+          <h3>Followers</h3>
+
+          <div class="flex">
+            <img src="images/icon-up.svg" alt="" class="up">
+            <p>12 Today</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="social">
+        <div class="card card-inner flex flex-col" aria-label="twitter">
+          <div class="flex">
+            <img src="images/icon-twitter.svg" alt="">
+            <p>@nathanf</p>
+          </div>
+
+          <h2 class="clr-text-1">1044</h2>
+
+          <h3>Followers</h3>
+
+          <div class="flex">
+            <img src="images/icon-up.svg" alt="" class="up">
+            <p>99 Today</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="social">
+        <div class="card card-inner flex flex-col" aria-label="instagram">
+          <div class="flex">
+            <img src="images/icon-instagram.svg" alt="">
+            <p>@realnathanf</p>
+          </div>
+
+          <h2 class="clr-text-1">11k</h2>
+
+          <h3>Followers</h3>
+
+          <div class="flex">
+            <img src="images/icon-up.svg" alt="" class="up">
+            <p>1099 Today</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="social">
+        <div class="card card-inner flex flex-col" aria-label="youtube">
+          <div class="flex">
+            <img src="images/icon-youtube.svg" alt="">
+            <p>Nathan F.</p>
+          </div>
+
+          <h2 class="clr-text-1">8239</h2>
+
+          <h3>Subscribers</h3>
+
+          <div class="flex">
+            <img src="images/icon-down.svg" alt="" class="down">
+            <p>144 Today</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="overview" aria-labelledby="overview">
+      <h2 class="clr-text-1" id="overview">Overview - Today</h2>
+
+      <div class="grid">
+        <div class="card">
+          <div class="flex">
+            <h3>Page Views</h3>
+            <img src="images/icon-facebook.svg" alt="">
+          </div>
+
+          <div class="flex">
+            <p class="clr-text-1">87</p>
+
+            <div class="flex">
+              <img src="images/icon-up.svg" alt="" class="up">
+              <p>3%</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="flex">
+            <h3>Likes</h3>
+            <img src="images/icon-facebook.svg" alt="">
+          </div>
+
+          <div class="flex">
+            <p class="clr-text-1">52</p>
+
+            <div class="flex">
+              <img src="images/icon-down.svg" alt="" class="down">
+              <p>2%</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="flex">
+            <h3>Likes</h3>
+            <img src="images/icon-instagram.svg" alt="">
+          </div>
+
+          <div class="flex">
+            <p class="clr-text-1">5462</p>
+
+            <div class="flex">
+              <img src="images/icon-up.svg" alt="" class="up">
+              <p>2257%</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="flex">
+            <h3>Profile Views</h3>
+            <img src="images/icon-instagram.svg" alt="">
+          </div>
+
+          <div class="flex">
+            <p class="clr-text-1">52k</p>
+
+            <div class="flex">
+              <img src="images/icon-up.svg" alt="" class="up">
+              <p>1375%</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="flex">
+            <h3>Retweets</h3>
+            <img src="images/icon-twitter.svg" alt="">
+          </div>
+
+          <div class="flex">
+            <p class="clr-text-1">117</p>
+
+            <div class="flex">
+              <img src="images/icon-up.svg" alt="" class="up">
+              <p>303%</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="flex">
+            <h3>Likes</h3>
+            <img src="images/icon-twitter.svg" alt="">
+          </div>
+
+          <div class="flex">
+            <p class="clr-text-1">507</p>
+
+            <div class="flex">
+              <img src="images/icon-up.svg" alt="" class="up">
+              <p>553%</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="flex">
+            <h3>Likes</h3>
+            <img src="images/icon-youtube.svg" alt="">
+          </div>
+
+          <div class="flex">
+            <p class="clr-text-1">107</p>
+
+            <div class="flex">
+              <img src="images/icon-down.svg" alt="" class="down">
+              <p>19%</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="flex">
+            <h3>Total Views</h3>
+            <img src="images/icon-youtube.svg" alt="">
+          </div>
+
+          <div class="flex">
+            <p class="clr-text-1">1407</p>
+
+            <div class="flex">
+              <img src="images/icon-down.svg" alt="" class="down">
+              <p>12%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
