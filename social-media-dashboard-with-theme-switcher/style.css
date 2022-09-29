@@ -185,7 +185,7 @@ main {
 
 main h1 {
   line-height: 1.2;
-  font-size: 1.7rem;
+  font-size: clamp(1.4rem, 6vmin, 2rem);
 }
 
 header {
