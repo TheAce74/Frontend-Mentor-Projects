@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+  <!-- custom styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- script -->
+  <script src="main.js" defer></script>
+</head>
+
+<body class="flex flex-col">
+  <header class="flex">
+    <div class="title">
+      <h1>
+        <span>Rock </span>
+        <span>Paper </span>
+        <span>Scissors </span>
+        <span data-seen="hidden">Lizard </span>
+        <span data-seen="hidden">Spock</span>
+      </h1>
+    </div>
+
+    <div class="score">
+      <h2>Score</h2>
+      <p>0</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="frame">
+      <button class="play btn" id="paper">
+        <img src="images/icon-paper.svg" alt="">
+      </button>
+
+      <button class="play btn" id="scissors">
+        <img src="images/icon-scissors.svg" alt="scissors">
+      </button>
+
+      <button class="play btn" id="rock">
+        <img src="images/icon-rock.svg" alt="">
+      </button>
+
+      <button class="play btn" id="lizard" data-seen="hidden">
+        <img src="images/icon-lizard.svg" alt="">
+      </button>
+
+      <button class="play btn" id="spock" data-seen="hidden">
+        <img src="images/icon-spock.svg" alt="">
+      </button>
+    </div>
+
+    <div class="flex hidden | lobby">
+      <div class="flex flex-col">
+        <h3>You Picked</h3>
+
+        <button class="play" id="scissors">
+          <img src="images/icon-scissors.svg" alt="">
+        </button>
+      </div>
+
+      <div class="stats" aria-live="assertive" role="alert"></div>
+
+      <div class="flex flex-col">
+        <h3>The House Picked</h3>
+
+        <button class="play"></button>
+      </div>
+    </div>
+  </main>
+
+  <div class="flex | final">
+    <div class="flex">
+      <p class="regular">Regular</p>
+      <input type="checkbox" id="toggle">
+      <label for="toggle" tabindex="0">toggle</label>
+      <p class="bonus">Bonus</p>
+    </div>
+
+    <button class="btn | rules">Rules</button>
+  </div>
+
+  <dialog>
+    <div class="flex">
+      <h2>Rules</h2>
+      <button class="close">
+        <img src="images/icon-close.svg" alt="close">
+      </button>
+    </div>
+
+    <img src="images/image-rules.svg" alt="">
+  </dialog>
+</body>
+
+</html>

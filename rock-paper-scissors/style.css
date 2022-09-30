@@ -1,0 +1,499 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+/* resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select,
+a {
+  font: inherit;
+  color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* utilities */
+:root {
+  --clr-primary-400: hsl(229, 64%, 46%);
+
+  --clr-neutral-50: hsla(0, 0%, 90%, 0.075);
+  --clr-neutral-100: hsl(0, 0%, 90%);
+  --clr-neutral-200: hsla(217, 16%, 45%, 0.425);
+  --clr-neutral-300: hsl(217, 16%, 45%);
+  --clr-neutral-500: hsl(229, 25%, 31%);
+  --clr-neutral-900: hsla(0, 0%, 0%, 0.247);
+
+  --bg-rock: hsl(349, 70%, 56%);
+  --bg-rock-shadow: hsl(349, 71%, 52%);
+  --bg-paper: hsl(230, 89%, 65%);
+  --bg-paper-shadow: hsl(230, 89%, 62%);
+  --bg-scissors: hsl(40, 84%, 53%);
+  --bg-scissors-shadow: hsl(39, 89%, 49%);
+  --bg-lizard: hsl(261, 72%, 63%);
+  --bg-lizard-shadow: hsl(261, 73%, 60%);
+  --bg-spock: hsl(189, 58%, 57%);
+  --bg-spock-shadow: hsl(189, 59%, 53%);
+
+  --bg-body: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  --bg-play: var(--bg-rock);
+  --bg-play-shadow: var(--bg-rock-shadow);
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3em;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.play {
+  aspect-ratio: 1;
+  width: 6em;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 0 0 0.9em var(--bg-play), 0 0.2em 0 1.1em var(--bg-play-shadow),
+    inset 0 0.2em 0 var(--clr-neutral-200);
+}
+
+.play > * {
+  margin-inline: auto;
+  pointer-events: none;
+}
+
+.play#paper {
+  --bg-play: var(--bg-paper);
+  --bg-play-shadow: var(--bg-paper-shadow);
+}
+
+.play#scissors {
+  --bg-play: var(--bg-scissors);
+  --bg-play-shadow: var(--bg-scissors-shadow);
+}
+
+.play#lizard {
+  --bg-play: var(--bg-lizard);
+  --bg-play-shadow: var(--bg-lizard-shadow);
+}
+
+.play#spock {
+  --bg-play: var(--bg-spock);
+  --bg-play-shadow: var(--bg-spock-shadow);
+}
+
+.play:empty {
+  background-color: var(--clr-neutral-900);
+  box-shadow: none;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.btn:active {
+  scale: 80%;
+}
+
+.won {
+  box-shadow: 0 0 0 0.9em var(--bg-play), 0 0.2em 0 1.1em var(--bg-play-shadow),
+    inset 0 0.2em 0 var(--clr-neutral-200), 0 0 0 2.5em var(--clr-neutral-50),
+    0 0 0 4.1em var(--clr-neutral-50), 0 0 0 5.7em var(--clr-neutral-50);
+  transition: box-shadow 1s;
+}
+
+[data-seen="hidden"],
+.hidden {
+  display: none;
+}
+
+/* general styles */
+body {
+  background: var(--bg-body);
+  min-height: 100vh;
+  color: var(--clr-neutral-100);
+  padding-block: 1.5em;
+  font-weight: 600;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+header,
+main {
+  width: 50%;
+  margin-inline: auto;
+}
+
+header {
+  border: 2px solid var(--clr-neutral-300);
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+}
+
+header h1 {
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+header span {
+  display: block;
+}
+
+header h1:has([data-seen="shown"]) {
+  font-size: 1.5rem;
+}
+
+.score {
+  background-color: var(--clr-neutral-100);
+  border-radius: 0.5em;
+  padding: 0.8em 1.5em;
+  color: var(--clr-neutral-500);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.score h2 {
+  font-size: 0.8rem;
+  line-height: 0.4;
+  letter-spacing: 2px;
+  color: var(--clr-primary-400);
+}
+
+.score p {
+  font-size: 2.7rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-block-start: 0.1em;
+}
+
+.frame {
+  width: min(60%, 300px);
+  margin-inline: auto;
+  aspect-ratio: 1;
+  position: relative;
+  background: url("images/bg-triangle.svg");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.frame .play {
+  position: absolute;
+}
+
+.frame #rock {
+  left: 50%;
+  bottom: 0;
+  translate: -50% -10%;
+}
+
+.frame #scissors {
+  right: 0;
+}
+
+.final {
+  width: 90%;
+}
+
+.final p,
+.final button {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.final .flex {
+  gap: 1.5em;
+}
+
+[type="checkbox"] {
+  display: none;
+}
+
+label {
+  color: transparent;
+  background-color: var(--clr-neutral-300);
+  padding-inline: 0.2em;
+  border-radius: 100vmax;
+  position: relative;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+label::before {
+  content: "";
+  position: absolute;
+  inset: 13% auto 13% 7%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--clr-neutral-100);
+  transition: inset 3s;
+}
+
+[type="checkbox"]:checked + label {
+  background-color: var(--clr-primary-400);
+}
+
+[type="checkbox"]:checked + label::before {
+  inset: 13% 7% 13% auto;
+}
+
+.rules {
+  background-color: transparent;
+  border: 1px solid var(--clr-neutral-100);
+  border-radius: 0.4em;
+  padding: 0.3em 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.rules:hover,
+.rules:focus-visible {
+  background-color: var(--clr-neutral-300);
+}
+
+.lobby {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  translate: 0 -20%;
+  width: min(90%, 500px);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.stats {
+  translate: 15% 50%;
+}
+
+.stats h3 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.reset {
+  color: var(--clr-neutral-500);
+  background-color: var(--clr-neutral-100);
+  border-radius: 0.4em;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  padding: 0.5em 1.5em;
+  margin-block-start: 0.6em;
+}
+
+.reset:hover,
+.reset:focus-visible {
+  opacity: 0.7;
+}
+
+.btn-lost {
+  color: var(--bg-rock);
+}
+
+dialog {
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border: none;
+  border-radius: 0.8em;
+  padding: 1em 2em 2em;
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-neutral-500);
+}
+
+dialog .flex {
+  margin-block-end: 1em;
+}
+
+dialog h2 {
+  text-transform: uppercase;
+}
+
+dialog::backdrop {
+  background-color: hsl(214, 47%, 23%);
+}
+
+.close {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* bonus stuff */
+main:has([data-seen="shown"]) .frame {
+  background: url("images/bg-pentagon.svg");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+main:has([data-seen="shown"]) .frame #rock {
+  right: 0;
+  translate: 30% 30%;
+}
+
+main:has([data-seen="shown"]) .frame #paper {
+  right: 0;
+  top: 20%;
+  translate: 30% 0;
+}
+
+main:has([data-seen="shown"]) .frame #scissors {
+  left: 50%;
+  translate: -50% -30%;
+}
+
+main:has([data-seen="shown"]) .frame #lizard {
+  left: 0;
+  bottom: 0;
+  translate: 0 30%;
+}
+
+main:has([data-seen="shown"]) .frame #spock {
+  left: 0;
+  top: 20%;
+  translate: -30% 0;
+}
+
+@media (max-width: 50rem) {
+  body {
+    font-size: 12px;
+  }
+
+  header,
+  main {
+    width: 90%;
+  }
+
+  .frame {
+    width: 90%;
+    aspect-ratio: 1.4;
+  }
+
+  .frame #paper {
+    translate: 20% -20%;
+  }
+
+  .frame #scissors {
+    translate: -20% -20%;
+  }
+
+  .final {
+    flex-direction: column-reverse;
+    gap: 1.5em;
+  }
+
+  .lobby .flex {
+    flex-direction: column-reverse;
+  }
+
+  .stats {
+    translate: -50% 120%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: max-content;
+  }
+
+  .stats h3 {
+    font-size: 2.5rem;
+  }
+
+  .reset {
+    border-radius: 0.5em;
+    font-size: 1rem;
+    padding: 0.7em 3em;
+    margin-block-start: 0.2em;
+  }
+
+  dialog {
+    top: 0;
+    left: 0;
+    translate: 0 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    border-radius: 0;
+    padding: 5em 2em 2em;
+  }
+
+  dialog .flex {
+    margin-block-end: 3em;
+  }
+
+  dialog h2 {
+    font-size: 1.6rem;
+  }
+
+  dialog > img {
+    width: 90%;
+    margin-inline: auto;
+  }
+
+  .close {
+    z-index: 1;
+  }
+
+  /* bonus stuff */
+  main:has([data-seen="shown"]) .frame {
+    background: url("images/bg-pentagon.svg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  main:has([data-seen="shown"]) .frame #rock {
+    translate: 10vmin 30%;
+  }
+
+  main:has([data-seen="shown"]) .frame #paper {
+    translate: -6vmin -5%;
+  }
+
+  main:has([data-seen="shown"]) .frame #lizard {
+    translate: 12vmin 30%;
+  }
+
+  main:has([data-seen="shown"]) .frame #spock {
+    translate: 6vmin 0;
+  }
+}
