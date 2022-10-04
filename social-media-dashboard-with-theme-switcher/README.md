@@ -39,7 +39,7 @@ Users should be able to:
 
 ### What I learned
 
-I finally understand the difference between auto-fill and auto-fit; so i decided to challenge myself to complete the project with no JavaScript and media query. Overall I'm pretty satisfied with the result😁
+I finally understood the difference between auto-fill and auto-fit; so i decided to challenge myself to complete the project with no JavaScript and media query. Overall I'm pretty satisfied with the result😁
 
 Honestly, modern CSS is the best **#hasSelector #conditionalCSS**
 
