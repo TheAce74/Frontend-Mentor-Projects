@@ -1,0 +1,406 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@700&display=swap");
+
+/* resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select,
+a {
+  font: inherit;
+  color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* utilities */
+:root {
+  --clr-primary-300: hsl(321, 100%, 78%);
+  --clr-primary-400: hsl(322, 100%, 66%);
+  --clr-primary-500: hsl(0, 100%, 63%);
+
+  --clr-accent-400: hsl(180, 100%, 50%);
+
+  --clr-neutral-100: hsl(0, 0%, 95%);
+  --clr-neutral-300: hsl(207, 100%, 98%);
+  --clr-neutral-400: hsla(192, 100%, 9%, 0.171);
+  --clr-neutral-500: hsl(192, 100%, 9%);
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.8em;
+}
+
+.flex-col {
+  flex-direction: column;
+  gap: 1em;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.btn {
+  border: none;
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-primary-400);
+  border-radius: 0.3em;
+  padding: 0.4em 1.8em;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background-color: var(--clr-primary-300);
+}
+
+.btn-pill {
+  padding: 0.5em 2.5em;
+  border-radius: 100vmax;
+  box-shadow: 0 4px 2px var(--clr-neutral-400);
+}
+
+.btn-inverted {
+  padding: 0.3em 1.5em;
+  color: var(--clr-primary-300);
+  border: 1px solid currentColor;
+  background-color: var(--clr-neutral-100);
+  box-shadow: none;
+}
+
+.btn-inverted:hover,
+.btn-inverted:focus-visible {
+  opacity: 0.5;
+  background-color: var(--clr-neutral-100);
+}
+
+.heading {
+  line-height: 1.2;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+}
+
+.text-center {
+  text-align: center;
+}
+
+[aria-label="social links"] button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+[aria-label="social links"] button:hover svg path,
+[aria-label="social links"] button:focus-visible svg path {
+  fill: var(--clr-accent-400);
+}
+
+/* general styles */
+body {
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-neutral-500);
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  padding-top: 2em;
+}
+
+header,
+main {
+  width: 85%;
+  margin: auto;
+}
+
+header img,
+footer > div:nth-child(3) > img {
+  width: 10em;
+}
+
+main {
+  --mb: 1.8em;
+  margin-top: 5em;
+}
+
+main * {
+  margin-bottom: var(--mb);
+}
+
+main h1 {
+  --mb: 0.3em;
+}
+
+main button {
+  --mb: 3em;
+}
+
+main > img,
+main .flex {
+  --mb: 3em;
+  width: 70%;
+  margin-inline: auto;
+}
+
+main .flex img {
+  --mb: 0.5em;
+  width: 2em;
+}
+
+main .flex h2 {
+  --mb: 0.1em;
+  font-size: 2.3rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+main .flex p {
+  --mb: 0;
+  font-size: 0.85rem;
+}
+
+main ~ section.flex {
+  padding: 2em 7.5vw;
+  gap: 4.2em;
+  position: relative;
+  margin: 8em auto;
+}
+
+main ~ section .heading {
+  margin-bottom: 0.3em;
+}
+
+main ~ section img {
+  width: 40%;
+}
+
+.first,
+.second {
+  background-color: var(--clr-neutral-300);
+}
+
+.mobile {
+  display: none;
+}
+
+.first .desktop img,
+.second .desktop img,
+footer .desktop img {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.first .desktop img:first-of-type,
+.second .desktop img:first-of-type,
+footer .desktop img {
+  top: 0;
+  transform: translateY(-95%);
+}
+
+.first .desktop img:last-of-type,
+.second .desktop img:last-of-type {
+  bottom: 0;
+  transform: translateY(95%);
+}
+
+section:not(.flex) {
+  margin: 10em auto;
+}
+
+section:not(.flex) h2 {
+  margin-bottom: 1em;
+}
+
+footer.flex {
+  background-color: var(--clr-neutral-500);
+  color: var(--clr-neutral-100);
+  position: relative;
+  margin-top: 12em;
+  padding: 4em 2em;
+  align-items: flex-start;
+  gap: 4em;
+}
+
+footer > div:nth-child(n + 3) > p {
+  margin: 1em 0;
+  width: 90%;
+}
+
+footer p {
+  font-size: 0.875rem;
+}
+
+footer > div:nth-child(3) {
+  transform: translateX(-5%);
+}
+
+footer > div:nth-child(3) .flex {
+  justify-content: flex-start;
+  margin-bottom: 0.8em;
+}
+
+footer > div:nth-child(3) .flex:last-child {
+  margin: 3.2em 0 1em;
+}
+
+footer > div:nth-child(4) > .flex {
+  gap: 0.3em;
+}
+
+footer > div:nth-child(4) input {
+  color: var(--clr-neutral-500);
+  font-weight: 500;
+  padding: 0.4em 0.2em 0.4em 0.7em;
+  border-radius: 0.5em;
+  border: none;
+}
+
+.error {
+  color: var(--clr-primary-500);
+  font-weight: 500;
+  display: none;
+}
+
+footer > div:nth-child(4) input:invalid {
+  outline-color: var(--clr-primary-500);
+}
+
+footer:has(input:invalid) .error {
+  display: block;
+}
+
+@media (max-width: 50rem) {
+  html {
+    font-size: 15px;
+  }
+
+  .flex:not(.flex-col, .flex-col > *, header) {
+    flex-wrap: wrap-reverse;
+  }
+
+  main .flex img {
+    margin-inline: auto;
+  }
+
+  main .flex {
+    flex-direction: column;
+  }
+
+  main .flex h2 {
+    text-align: center;
+  }
+
+  main ~ section.flex {
+    padding: 3em 7.5vw;
+    gap: 2.2em;
+    margin: 2em auto;
+    text-align: center;
+  }
+
+  main ~ section img {
+    width: 80%;
+    margin-inline: auto;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
+
+  .first .mobile img,
+  .second .mobile img,
+  footer .mobile img {
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+
+  .first .mobile img:first-of-type,
+  .second .mobile img:first-of-type,
+  footer .mobile img {
+    top: 0;
+    transform: translateY(-95%);
+  }
+
+  .first .mobile img:last-of-type,
+  .second .mobile img:last-of-type {
+    bottom: 0;
+    transform: translateY(95%);
+  }
+
+  section:not(.flex) {
+    margin: 5em auto;
+  }
+
+  section:not(.flex) h2 {
+    margin-bottom: 1em;
+  }
+
+  footer.flex {
+    margin-top: 6em;
+  }
+
+  footer > div:nth-child(3) {
+    transform: translateX(0%);
+  }
+
+  footer > div:nth-child(4) > .flex .flex {
+    flex-direction: column;
+    gap: 1.5em;
+    width: 100%;
+  }
+
+  footer > div:nth-child(4) input {
+    width: 100%;
+  }
+
+  footer > div:nth-child(4) button {
+    width: 50%;
+    margin-left: auto;
+  }
+
+  .error {
+    position: relative;
+    top: -4.4em;
+  }
+}
