@@ -1,0 +1,8 @@
+@include mobile {
+  main {
+    top: 2.5em !important;
+    transform: translate(-50%, 0%) !important;
+    width: 90% !important;
+    flex-direction: column;
+  }
+}

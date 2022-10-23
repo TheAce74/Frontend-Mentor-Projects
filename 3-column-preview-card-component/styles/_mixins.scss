@@ -1,0 +1,23 @@
+@mixin font($role) {
+  @if $role == "heading" {
+    font: {
+      family: "Big Shoulders Display", cursive;
+      weight: 700;
+      size: 1.5rem;
+    }
+    color: hsl(0, 0%, 95%);
+  } @else {
+    font: {
+      family: "Lexend Deca", sans-serif;
+      weight: 400;
+      size: 0.75rem;
+    }
+    color: hsla(0, 0%, 100%, 0.75);
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 50rem) {
+    @content;
+  }
+}

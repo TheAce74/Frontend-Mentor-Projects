@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select,
+a {
+  font: inherit;
+  color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+@media screen and (max-width: 50rem) {
+  main {
+    top: 2.5em !important;
+    -webkit-transform: translate(-50%, 0%) !important;
+            transform: translate(-50%, 0%) !important;
+    width: 90% !important;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+body {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: hsla(0deg, 0%, 100%, 0.75);
+}
+
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: min(65%, 1100px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+main .main__card:nth-child(1) {
+  background-color: hsl(31deg, 77%, 52%);
+  padding: 2rem;
+  position: relative;
+}
+main .main__card:nth-child(1) button {
+  color: hsl(31deg, 77%, 52%);
+  border-radius: 100vmax;
+  border: 2px solid currentColor;
+  padding: 0.5em 1.5em;
+  position: absolute;
+  bottom: 2em;
+  cursor: pointer;
+  font-weight: 700;
+}
+main .main__card:nth-child(1) button:hover, main .main__card:nth-child(1) button:focus-visible {
+  background-color: transparent;
+  color: hsl(0deg, 0%, 95%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+main .main__card:nth-child(2) {
+  background-color: hsl(184deg, 100%, 22%);
+  padding: 2rem;
+  position: relative;
+}
+main .main__card:nth-child(2) button {
+  color: hsl(184deg, 100%, 22%);
+  border-radius: 100vmax;
+  border: 2px solid currentColor;
+  padding: 0.5em 1.5em;
+  position: absolute;
+  bottom: 2em;
+  cursor: pointer;
+  font-weight: 700;
+}
+main .main__card:nth-child(2) button:hover, main .main__card:nth-child(2) button:focus-visible {
+  background-color: transparent;
+  color: hsl(0deg, 0%, 95%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+main .main__card:nth-child(3) {
+  background-color: hsl(179deg, 100%, 13%);
+  padding: 2rem;
+  position: relative;
+}
+main .main__card:nth-child(3) button {
+  color: hsl(179deg, 100%, 13%);
+  border-radius: 100vmax;
+  border: 2px solid currentColor;
+  padding: 0.5em 1.5em;
+  position: absolute;
+  bottom: 2em;
+  cursor: pointer;
+  font-weight: 700;
+}
+main .main__card:nth-child(3) button:hover, main .main__card:nth-child(3) button:focus-visible {
+  background-color: transparent;
+  color: hsl(0deg, 0%, 95%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+main .main__card-title {
+  font-family: "Big Shoulders Display", cursive;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: hsl(0deg, 0%, 95%);
+  text-transform: uppercase;
+  margin-block: 0.5em;
+}
+main .main__card-content {
+  -webkit-margin-after: 5em;
+          margin-block-end: 5em;
+}/*# sourceMappingURL=style.css.map */

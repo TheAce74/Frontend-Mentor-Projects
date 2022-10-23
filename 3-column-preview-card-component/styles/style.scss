@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+@import "resets";
+@import "variables";
+@import "mixins";
+@import "responsive";
+
+body {
+  @include font(paragraph);
+}
+
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(65%, 1100px);
+  display: flex;
+
+  @for $i from 1 to 4 {
+    .#{&}__card:nth-child(#{$i}) {
+      background-color: nth($primary-colors, $i);
+      padding: 2rem;
+      position: relative;
+
+      button {
+        color: nth($primary-colors, $i);
+        border-radius: 100vmax;
+        border: 2px solid currentColor;
+        padding: 0.5em 1.5em;
+        position: absolute;
+        bottom: 2em;
+        cursor: pointer;
+        font-weight: 700;
+
+        &:hover,
+        &:focus-visible {
+          background-color: transparent;
+          color: $clr-txt;
+          transition: all 0.3s;
+        }
+      }
+    }
+  }
+
+  .#{&}__card-title {
+    @include font(heading);
+    text-transform: uppercase;
+    margin-block: 0.5em;
+  }
+
+  .#{&}__card-content {
+    margin-block-end: 5em;
+  }
+}
