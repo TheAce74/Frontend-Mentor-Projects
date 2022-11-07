@@ -14,7 +14,7 @@
 
 .intro {
   min-height: calc(100vh - 4em) !important;
-  background-image: url("../../../public/assets/images/bg-intro-desktop.svg") !important;
+  background-image: url("../../public/assets/images/bg-intro-desktop.svg") !important;
   background-position: top right;
   background-size: 60%;
   background-repeat: no-repeat;
@@ -45,7 +45,7 @@
 
   @include max(medium) {
     overflow: hidden;
-    background-image: url("../../../public/assets/images/bg-intro-mobile.svg") !important;
+    background-image: url("../../public/assets/images/bg-intro-mobile.svg") !important;
     background-size: 100% 75%;
     background-repeat: no-repeat;
     text-align: center;
