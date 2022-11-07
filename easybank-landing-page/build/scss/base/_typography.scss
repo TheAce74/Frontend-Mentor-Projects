@@ -1,0 +1,27 @@
+//Basic typography styles for body text
+body {
+  color: var(--text);
+  background: var(--bg);
+  font-family: "Public Sans", sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.header {
+  font-size: 0.9rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 0.8rem;
+}

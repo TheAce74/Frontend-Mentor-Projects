@@ -1,0 +1,18 @@
+%btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+%btn-pill {
+  @extend %btn;
+  background: var(--gradient);
+  color: var(--clr-neutral-100);
+  border-radius: 100vmax;
+  padding: 0.4em 1em;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 0.6;
+  }
+}

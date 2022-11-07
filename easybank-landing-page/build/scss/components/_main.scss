@@ -1,0 +1,152 @@
+@use "../base" as *;
+@use "buttons" as *;
+@use "../abstracts" as *;
+
+@for $i from 1 through 3 {
+  main > *:nth-child(#{$i}) {
+    @extend %container;
+
+    @if ($i != 1) {
+      padding: 4em 4.5em;
+    }
+  }
+}
+
+.intro {
+  min-height: calc(100vh - 4em) !important;
+  background-image: url("../../../public/assets/images/bg-intro-desktop.svg") !important;
+  background-position: top right;
+  background-size: 60%;
+  background-repeat: no-repeat;
+
+  &__row {
+    @extend %flex;
+
+    padding-inline: 4.5em;
+    align-items: center;
+
+    img {
+      width: min(30em, 50vw);
+      transform: translate(5%, 10%);
+    }
+  }
+
+  &__content {
+    @extend %flow;
+
+    h1 {
+      --flow: 0.2em !important;
+    }
+
+    button {
+      @extend %btn-pill;
+    }
+  }
+
+  @include max(medium) {
+    overflow: hidden;
+    background-image: url("../../../public/assets/images/bg-intro-mobile.svg") !important;
+    background-size: 100% 75%;
+    background-repeat: no-repeat;
+    text-align: center;
+
+    &__row {
+      flex-direction: column-reverse;
+      padding-inline: 2em;
+      align-items: flex-end;
+
+      img {
+        width: 28em;
+        transform: translate(0%, -10%);
+        margin-inline: auto;
+      }
+    }
+
+    &__content {
+      transform: translateY(-15%);
+    }
+  }
+}
+
+.choice {
+  --bg: var(--clr-neutral-300) !important;
+  @extend %flow;
+
+  > * {
+    --flow: 0.5em !important;
+  }
+
+  &__row {
+    @extend %flex;
+  }
+
+  &__column {
+    @extend %flow;
+    margin-block-start: 1em;
+
+    > * {
+      --flow: 0.8em !important;
+    }
+
+    img {
+      width: 3.5em;
+    }
+  }
+
+  @include max(medium) {
+    text-align: center;
+
+    &__row {
+      flex-direction: column;
+
+      img {
+        margin-inline: auto;
+      }
+    }
+  }
+}
+
+.articles {
+  @extend %flow;
+
+  > * {
+    --flow: 0.8em !important;
+  }
+
+  &__row {
+    @extend %flex;
+  }
+
+  &__card {
+    background: var(--clr-neutral-100);
+    @extend %flow;
+
+    > * {
+      --flow: 0.5em !important;
+    }
+
+    img {
+      aspect-ratio: 1.75;
+    }
+  }
+
+  &__container {
+    padding: 1rem;
+    @extend %flow;
+
+    > * {
+      --flow: 0.5em !important;
+    }
+  }
+
+  @include max(medium) {
+    h2 {
+      text-align: center;
+    }
+
+    &__row {
+      flex-direction: column;
+      gap: 2em;
+    }
+  }
+}

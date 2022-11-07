@@ -1,0 +1,88 @@
+@use "../base" as *;
+@use "buttons" as *;
+@use "../abstracts" as *;
+
+.footer {
+  background: var(--clr-primary-400);
+  padding: 3rem 4.5rem;
+  @extend %flex;
+  align-items: stretch;
+
+  &__images {
+    @extend %flex;
+    flex-direction: column;
+  }
+
+  &__socials {
+    @extend %flex;
+    list-style: none;
+  }
+
+  &__nav {
+    ul {
+      color: var(--clr-neutral-100);
+      columns: 2 12vw;
+      font-size: 0.85rem;
+
+      li {
+        &:not(:last-child, :nth-child(3)) {
+          padding-block-end: 1em;
+        }
+
+        a {
+          text-decoration: none;
+
+          &:hover,
+          &:focus-visible {
+            color: var(--clr-primary-300);
+          }
+        }
+      }
+    }
+  }
+
+  &__credits {
+    @extend %flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 1.5em;
+
+    p {
+      font-size: 0.85rem;
+    }
+  }
+
+  &__btn {
+    @extend %btn-pill;
+    padding-inline: 1.5em;
+    text-align: center;
+  }
+
+  @include max(medium) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8em;
+
+    &__images {
+      gap: 2em;
+      align-items: center;
+    }
+
+    &__nav {
+      ul {
+        columns: 1;
+        font-size: 1rem;
+        text-align: center;
+
+        li:not(:last-child) {
+          padding-block-end: 1em;
+        }
+      }
+    }
+
+    &__credits {
+      align-items: center;
+    }
+  }
+}

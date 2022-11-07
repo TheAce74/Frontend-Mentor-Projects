@@ -1,0 +1,121 @@
+@use "../base" as *;
+@use "../abstracts" as *;
+@use "buttons" as *;
+
+.header {
+  @extend %flex;
+  align-items: center;
+  padding-inline: 4em;
+  background-color: var(--background);
+
+  > a {
+    min-width: max-content;
+  }
+
+  &__nav {
+    flex: 0.4;
+
+    ul {
+      @extend %flex;
+
+      li {
+        flex: 1;
+        text-align: center;
+
+        &::after {
+          content: "";
+          display: block;
+          width: 0;
+          margin-inline: auto;
+          height: 0.1em;
+          background: var(--clr-primary-300);
+
+          @include motion {
+            transition: width 0.4s;
+          }
+        }
+
+        &:hover::after,
+        &:has(a:focus-visible)::after {
+          width: 100%;
+        }
+
+        a {
+          text-decoration: none;
+          display: block;
+          padding-block: 1.2em;
+
+          &:hover,
+          &:focus-visible {
+            color: var(--clr-primary-400);
+          }
+        }
+      }
+    }
+  }
+
+  &__btn {
+    @extend %btn-pill;
+  }
+
+  &__menu {
+    @extend %btn;
+    display: none;
+  }
+
+  @include max(medium) {
+    padding: 1em 2em;
+
+    &:has(.open)::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(var(--clr-primary-500) 80%, transparent);
+    }
+
+    &__nav {
+      position: fixed;
+      inset: 5em 0;
+      display: none;
+
+      &.open {
+        display: block;
+        z-index: 1;
+      }
+
+      ul {
+        flex-direction: column;
+        align-items: center;
+        background: var(--clr-neutral-100);
+        border-radius: 1em;
+        width: 90%;
+        margin-inline: auto;
+        padding-block: 1em;
+        gap: 0;
+      }
+    }
+
+    &__btn {
+      display: none;
+    }
+
+    &__menu {
+      display: block;
+      z-index: 2;
+
+      & img:nth-child(2) {
+        display: none;
+      }
+
+      &.open {
+        & img:nth-child(1) {
+          display: none;
+        }
+
+        & img:nth-child(2) {
+          display: block;
+        }
+      }
+    }
+  }
+}

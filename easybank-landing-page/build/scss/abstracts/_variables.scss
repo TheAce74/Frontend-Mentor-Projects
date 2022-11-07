@@ -1,0 +1,7 @@
+@use "maps";
+
+$gradient: linear-gradient(
+  to right,
+  map-get(maps.$primary-colors, 300),
+  map-get(maps.$primary-colors, 200)
+);

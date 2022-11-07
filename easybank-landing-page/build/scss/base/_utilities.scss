@@ -1,0 +1,36 @@
+//utility classes, sass placeholders and css custom properties
+@use "../abstracts" as *;
+
+:root {
+  @each $key, $color in $primary-colors {
+    --clr-primary-#{$key}: #{$color};
+  }
+
+  @each $key, $color in $neutral-colors {
+    --clr-neutral-#{$key}: #{$color};
+  }
+
+  --bg: var(--clr-neutral-100);
+  --text: var(--clr-neutral-400);
+  --heading: var(--clr-primary-400);
+  --gradient: #{$gradient};
+}
+
+%container {
+  --bg: var(--clr-neutral-200);
+  background-color: var(--bg);
+}
+
+%flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+%flow {
+  > *:not(:last-child) {
+    --flow: 1em;
+    margin-block-end: var(--flow);
+  }
+}
