@@ -1,0 +1,106 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+.details {
+  padding: 2.5em 4em;
+
+  #{&}__back {
+    @extend .btn;
+    @extend .flex;
+    @extend .shadow;
+    gap: 0.7em;
+    padding: 0.5em 1.5em;
+    border-radius: 0.5em;
+    font-weight: 600;
+    margin-bottom: 3.5em;
+    text-decoration: none;
+    width: max-content;
+
+    &:is(:hover, :focus-visible) .fa-arrow-left-long {
+      translate: -50% 0%;
+    }
+
+    .fa-arrow-left-long {
+      @include motion {
+        transition: translate 500ms;
+      }
+    }
+  }
+
+  @include max(small) {
+    padding: 2.5em 1em;
+  }
+
+  #{&}__section {
+    @extend .flex;
+
+    @include max(medium) {
+      flex-direction: column;
+    }
+  }
+
+  #{&}__img {
+    width: min(30em, 35%);
+    aspect-ratio: 1.5;
+
+    @include max(medium) {
+      width: 25em;
+    }
+  }
+
+  #{&}__content {
+    flex: 0.95;
+    align-self: start;
+    padding-inline: 3em;
+  }
+
+  #{&}__heading {
+    font-size: clamp(1.3em, 3vmin + 0.8em, 2.5em);
+  }
+
+  #{&}__inner-content {
+    @extend .flex;
+    align-items: start;
+    justify-content: flex-start;
+    gap: 6em;
+    margin-block: 1.5em;
+
+    & > * > *:not(:last-child) {
+      margin-bottom: 0.4em;
+    }
+
+    @include max(medium) {
+      flex-direction: column;
+      gap: 2em;
+    }
+  }
+
+  #{&}__borders {
+    @extend .grid;
+    grid-template-columns: max-content 1fr;
+    gap: 1em;
+
+    & > div {
+      @extend .flex;
+      justify-content: start;
+      flex-wrap: wrap;
+      gap: 0.8em;
+    }
+
+    @include max(medium) {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+  }
+
+  #{&}__border {
+    @extend .btn;
+    @extend .shadow;
+    border-radius: 0.2em;
+    padding: 0.2em 1em;
+
+    &:is(:hover, :focus-visible) {
+      scale: 0.9;
+    }
+  }
+}

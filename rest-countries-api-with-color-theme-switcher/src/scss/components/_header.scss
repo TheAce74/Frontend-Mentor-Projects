@@ -1,0 +1,31 @@
+@use "../base" as *;
+@use "../abstracts" as *;
+.header {
+  @extend .flex;
+  @extend .shadow;
+  background-color: var(--clr-elem);
+  padding: 1em 4em;
+  
+
+  #{&}__heading {
+    font-size: clamp(1.2em, 3vmin + 0.3em, 2em);
+  }
+
+  #{&}__theme-switcher {
+    @extend .btn;
+    font-weight: 600;
+
+    &:is(:hover, :focus-visible) {
+      filter: invert(20%);
+    }
+
+    .fa-solid {
+      display: inline-block;
+      margin-right: 0.5em;
+    }
+  }
+
+  @include max(small) {
+    padding: 1em;
+  }
+}

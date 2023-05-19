@@ -1,0 +1,73 @@
+@use "../base" as *;
+@use "../abstracts" as *;
+.body {
+  @extend .grid;
+  padding-inline: 4em;
+  padding-bottom: 5em;
+
+  &:has(.splash) {
+    min-height: calc(100vh - 15em);
+  }
+
+  &:has(> *:last-child:nth-child(2)) {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > * {
+      width: em(300);
+    }
+
+    @include max(small) {
+      justify-content: center;
+    }
+  }
+
+  #{&}__card {
+    @extend .shadow;
+    text-decoration: none;
+
+    &[data-fade="true"] {
+      @include motion {
+        opacity: 0;
+        animation: fade 500ms linear forwards;
+        @for $i from 1 to 250 {
+          &:nth-child(#{$i + 1}) {
+            animation-delay: $i * 300ms;
+          }
+        }
+        @keyframes fade {
+          to {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &:only-child {
+      width: em(300);
+
+      @include max(small) {
+        margin-inline: auto;
+      }
+    }
+  }
+
+  #{&}__img {
+    width: 100%;
+    aspect-ratio: 1.5;
+  }
+
+  #{&}__wrapper {
+    padding: 1.3em 1.2em 2.6em;
+  }
+
+  #{&}__name {
+    padding-bottom: 0.4em;
+  }
+}
+
+.splash {
+  margin: auto;
+  font-size: 1.5rem;
+  opacity: 0.6;
+}

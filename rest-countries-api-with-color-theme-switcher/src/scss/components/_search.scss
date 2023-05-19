@@ -1,0 +1,68 @@
+@use "../base" as *;
+@use "../abstracts" as *;
+.search {
+  padding: 2em 4em;
+  --space: 3.5em;
+
+  #{&}__form {
+    @extend .flex;
+
+    & > div {
+      width: 40%;
+      position: relative;
+    }
+  }
+
+  #{&}__input {
+    @extend .shadow;
+    width: 100%;
+    background-color: var(--clr-input);
+    border: none;
+    padding: 1em 0.5em 1em clamp(1em, var(--space), var(--space) + 0.3em);
+    border-radius: 0.5em;
+
+    &::placeholder {
+      color: var(--clr-text);
+    }
+  }
+
+  #{&}__btn {
+    @extend .btn;
+    position: absolute;
+    background-color: var(--clr-input);
+    inset: 0.1em auto 0.1em
+      clamp(0.33em, var(--space) / 3.2, var(--space) / 3.2 + 0.14em);
+
+    i {
+      font-size: 1.1rem;
+    }
+
+    &:is(:hover, :focus-visible, :focus-within) {
+      i {
+        filter: invert(20%);
+      }
+    }
+  }
+
+  #{&}__filter {
+    @extend .shadow;
+    background-color: var(--clr-input);
+    border: none;
+    padding: 1em calc(var(--space) * 0.4);
+    border-radius: 0.5em;
+  }
+
+  @include max(small) {
+    padding: 1.5em 1em;
+
+    #{&}__form {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5em;
+
+      & > div {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+@use "../abstracts" as *;
+:root:has([data-type="light"]) {
+  --clr-text: var(--clr-neutral-500);
+  --clr-bg: var(--clr-neutral-200);
+  --clr-elem: var(--clr-neutral-100);
+  --clr-shadow: var(--clr-neutral-400);
+}

@@ -1,0 +1,33 @@
+@use "../abstracts" as *;
+//utility classes, sass placeholders and css custom properties
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min($min-column-size, 100%), 1fr)
+  );
+  gap: 2em;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.shadow {
+  box-shadow: 0px 0px 3px var(--clr-shadow);
+}
+
+:root {
+  @each $key, $value in $neutral {
+    --clr-neutral-#{$key}: #{$value};
+  }
+}

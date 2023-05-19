@@ -1,0 +1,12 @@
+@use "../abstracts" as *;
+//Basic typography styles for body text
+body {
+  font-family: "Nunito Sans", sans-serif;
+  color: var(--clr-text);
+  background-color: var(--clr-bg);
+
+  > * {
+    width: min(100%, em(1500));
+    margin-inline: auto;
+  }
+}
