@@ -10,7 +10,7 @@ function Details() {
     let ignore = false;
 
     async function fetchData() {
-      const response = await fetch("../../src/assets/data.json");
+      const response = await fetch("../../data.json");
       if (!response.ok) throw new Error();
       const fetchedData = await response.json();
       if (!ignore) {

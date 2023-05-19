@@ -11,6 +11,8 @@ select.addEventListener("change", () => {
     return option.value === select.value;
   });
   link.href = option[0].getAttribute("data-new")
-    ? `${value}/public/index.html`
+    ? Number(option[0].getAttribute("data-new")) === 1
+      ? `${value}/public/index.html`
+      : `${value}/dist/index.html`
     : `${value}/index.html`;
 });
